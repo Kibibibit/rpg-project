@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterDef" load_steps=12 format=3 uid="uid://kab2isv5bxkn"]
+
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_isvta"]
+[ext_resource type="Resource" uid="uid://d01yjedapxwov" path="res://resource/skills/fire/skill_fire_weak_single.tres" id="2_ebrnc"]
+[ext_resource type="Resource" uid="uid://dv8o2ojouf2on" path="res://resource/skills/basic_attacks/skill_basic_attack_slash.tres" id="2_jfpeu"]
+[ext_resource type="Script" uid="uid://dk6gcgisgglrj" path="res://scripts/resource_definitions/character_def.gd" id="2_pjyus"]
+[ext_resource type="Resource" uid="uid://dabwil1cj8mtt" path="res://resource/skills/fire/skill_fire_weak_all.tres" id="3_qrgoc"]
+[ext_resource type="Resource" uid="uid://8a5gc6vy31dx" path="res://resource/skills/fire/skill_fire_weak_random.tres" id="4_ogeim"]
+[ext_resource type="Resource" uid="uid://3cn6uway5v4a" path="res://resource/skills/slash/skill_slash_weak_single.tres" id="5_357ym"]
+[ext_resource type="Resource" uid="uid://cvdvrxcuj2nfi" path="res://resource/skills/slash/skill_slash_weak_all.tres" id="6_iljfu"]
+[ext_resource type="Resource" uid="uid://bj2gmdryvqtjk" path="res://resource/skills/slash/skill_slash_weak_random.tres" id="7_rnvlj"]
+[ext_resource type="Script" uid="uid://pquyfjakk48m" path="res://scripts/resource_definitions/stats.gd" id="10_qrgoc"]
+
+[sub_resource type="Resource" id="Resource_ogeim"]
+script = ExtResource("10_qrgoc")
+strength = 6
+magic = 5
+endurance = 3
+agility = 8
+luck = 3
+metadata/_custom_type_script = "uid://pquyfjakk48m"
+
+[resource]
+script = ExtResource("2_pjyus")
+character_name = "Alfred"
+stats = SubResource("Resource_ogeim")
+basic_attack = ExtResource("2_jfpeu")
+base_skills = Array[ExtResource("1_isvta")]([ExtResource("2_ebrnc"), ExtResource("3_qrgoc"), ExtResource("4_ogeim"), ExtResource("5_357ym"), ExtResource("6_iljfu"), ExtResource("7_rnvlj")])
+metadata/_custom_type_script = "uid://dk6gcgisgglrj"

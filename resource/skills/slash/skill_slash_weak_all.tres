@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://cvdvrxcuj2nfi"]
+
+[ext_resource type="Script" uid="uid://chy5guiom8u75" path="res://scripts/resource_definitions/skills/skill_effect.gd" id="1_w2kd3"]
+[ext_resource type="Script" uid="uid://ckr577ue2sldj" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_damage.gd" id="2_pt8vg"]
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="2_vumuv"]
+
+[sub_resource type="Resource" id="Resource_vumuv"]
+script = ExtResource("2_pt8vg")
+power = 25
+element = 0
+base_accuracy = 0.99
+can_miss = true
+min_hits_per_target = 1
+max_hits_per_target = 1
+metadata/_custom_type_script = "uid://ckr577ue2sldj"
+
+[resource]
+resource_name = "SkillSlashWeakAll"
+script = ExtResource("2_vumuv")
+skill_name = "Sweeping Cut"
+effects = Array[ExtResource("1_w2kd3")]([SubResource("Resource_vumuv")])
+cost = 12
+cost_type = 1
+percentage_cost = false
+allowed_to_kill = false
+target_group = 4
+target_type = 1
+min_random_targets = 1
+max_random_targets = 1
+metadata/_custom_type_script = "uid://c2hknhxilubrr"

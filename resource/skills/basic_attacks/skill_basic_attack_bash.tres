@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://dxyvvsgqcidm5"]
+
+[ext_resource type="Script" uid="uid://chy5guiom8u75" path="res://scripts/resource_definitions/skills/skill_effect.gd" id="1_px2of"]
+[ext_resource type="Script" uid="uid://ckr577ue2sldj" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_damage.gd" id="2_8gu2f"]
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="2_ry0gt"]
+
+[sub_resource type="Resource" id="Resource_ry0gt"]
+script = ExtResource("2_8gu2f")
+power = 10
+element = 1
+base_accuracy = 0.8
+can_miss = true
+min_hits_per_target = 1
+max_hits_per_target = 1
+metadata/_custom_type_script = "uid://ckr577ue2sldj"
+
+[resource]
+resource_name = "SkillBasicAttackBash"
+script = ExtResource("2_ry0gt")
+skill_name = "Attack"
+effects = Array[ExtResource("1_px2of")]([SubResource("Resource_ry0gt")])
+cost = 0
+cost_type = 0
+percentage_cost = false
+allowed_to_kill = false
+target_group = 4
+target_type = 0
+min_random_targets = 1
+max_random_targets = 1
+metadata/_custom_type_script = "uid://c2hknhxilubrr"

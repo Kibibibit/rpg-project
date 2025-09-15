@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://d01yjedapxwov"]
+
+[ext_resource type="Script" uid="uid://chy5guiom8u75" path="res://scripts/resource_definitions/skills/skill_effect.gd" id="1_ll6k4"]
+[ext_resource type="Script" uid="uid://ckr577ue2sldj" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_damage.gd" id="2_qrard"]
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="3_8h5oh"]
+
+[sub_resource type="Resource" id="Resource_ll6k4"]
+script = ExtResource("2_qrard")
+power = 20
+element = 0
+base_accuracy = 0.99
+can_miss = true
+min_hits_per_target = 1
+max_hits_per_target = 1
+metadata/_custom_type_script = "uid://ckr577ue2sldj"
+
+[resource]
+resource_name = "SkillFireWeakSingle"
+script = ExtResource("3_8h5oh")
+skill_name = "Firebolt"
+effects = Array[ExtResource("1_ll6k4")]([SubResource("Resource_ll6k4")])
+cost = 5
+cost_type = 0
+percentage_cost = false
+allowed_to_kill = false
+target_group = 4
+target_type = 0
+min_random_targets = 1
+max_random_targets = 1
+metadata/_custom_type_script = "uid://c2hknhxilubrr"

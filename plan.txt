@@ -1,0 +1,3 @@
+Get backend logic working,
+	- Skill runner
+make barebones frontend 

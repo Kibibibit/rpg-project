@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterDef" load_steps=12 format=3 uid="uid://cp0k63xi2vtay"]
+
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_q83ot"]
+[ext_resource type="Resource" uid="uid://dxyvvsgqcidm5" path="res://resource/skills/basic_attacks/skill_basic_attack_bash.tres" id="2_3l8mn"]
+[ext_resource type="Script" uid="uid://dk6gcgisgglrj" path="res://scripts/resource_definitions/character_def.gd" id="2_crs0r"]
+[ext_resource type="Resource" uid="uid://drvj8tpipkx6h" path="res://resource/skills/ice/skill_ice_weak_single.tres" id="2_o3oov"]
+[ext_resource type="Resource" uid="uid://cvgnltilagmvf" path="res://resource/skills/ice/skill_ice_weak_all.tres" id="3_5t6am"]
+[ext_resource type="Resource" uid="uid://cavib121uxdov" path="res://resource/skills/ice/skill_ice_weak_random.tres" id="4_136o1"]
+[ext_resource type="Resource" uid="uid://lttfptobnkr4" path="res://resource/skills/bash/skill_bash_weak_single.tres" id="5_jpsl1"]
+[ext_resource type="Resource" uid="uid://wah1venxisrf" path="res://resource/skills/bash/skill_bash_weak_all.tres" id="6_4dj4d"]
+[ext_resource type="Resource" uid="uid://dgofjyry8npph" path="res://resource/skills/bash/skill_bash_weak_random.tres" id="7_l6g45"]
+[ext_resource type="Script" uid="uid://pquyfjakk48m" path="res://scripts/resource_definitions/stats.gd" id="10_5t6am"]
+
+[sub_resource type="Resource" id="Resource_136o1"]
+script = ExtResource("10_5t6am")
+strength = 3
+magic = 7
+endurance = 5
+agility = 1
+luck = 5
+metadata/_custom_type_script = "uid://pquyfjakk48m"
+
+[resource]
+script = ExtResource("2_crs0r")
+character_name = "Belmont"
+stats = SubResource("Resource_136o1")
+basic_attack = ExtResource("2_3l8mn")
+base_skills = Array[ExtResource("1_q83ot")]([ExtResource("2_o3oov"), ExtResource("3_5t6am"), ExtResource("4_136o1"), ExtResource("5_jpsl1"), ExtResource("6_4dj4d"), ExtResource("7_l6g45")])
+metadata/_custom_type_script = "uid://dk6gcgisgglrj"
