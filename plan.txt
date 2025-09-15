@@ -1,3 +1,6 @@
 Get backend logic working,
-	- Skill runner
+	- Mostly done!
+	- Skill effect stages
+
 make barebones frontend 
+	- just a text log for now?
