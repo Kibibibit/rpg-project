@@ -4,3 +4,18 @@ Get backend logic working,
 
 make barebones frontend 
 	- just a text log for now?
+
+
+
+Battle System:
+	- On round start, each combatant is placed in order based on intiative (currently speed)
+	- if a character hits an enemy weakness, or lands a critical hit, the target is knocked down. Characters
+	  who have been knocked down are moved to the end of the initiative order.
+	- If a character lands a knockdown, they start a chain, and gain one Momentum
+		- The next allied character in the intiative order gets their turned moved up to be next
+		- The character can either spend the Momentum to use a more powerful version of one of their skills, 
+		  or try to continue the chain
+		- If all party members participate in the chain, some kind of special thing could happen?
+		- hitting a resistance will break the chain
+		- You cannot chain to someone who has already had their turn (Chaining doesn't give an extra turn,
+		it just makes a charater have their turn sooner)
