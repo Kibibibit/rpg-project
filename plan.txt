@@ -16,6 +16,6 @@ Battle System:
 		- The character can either spend the Momentum to use a more powerful version of one of their skills, 
 		  or try to continue the chain
 		- If all party members participate in the chain, some kind of special thing could happen?
-		- hitting a resistance will break the chain
+		- Failing to score a knockdown will break the chain, or if an aoe attack hits an enemy resistance/reflect/absorb
 		- You cannot chain to someone who has already had their turn (Chaining doesn't give an extra turn,
 		it just makes a charater have their turn sooner)
