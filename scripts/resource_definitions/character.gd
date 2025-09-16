@@ -4,12 +4,17 @@ class_name Character
 var def: CharacterDef
 
 
-var mp: int = 100 # TODO: Define properly
-var hp: int = 100 # TODO: Define properly
+var mp: int = 100
+var hp: int = 100
+var max_hp: int = 0
+var max_mp: int = 0
 
 var skills: Array[Skill] = []
 
 var stats: Stats
+
+var modifiers: StatModifiers = StatModifiers.new()
+
 
 static func from_id(p_id: int) -> Character:
 	return instance_from_id(p_id) as Character
@@ -18,6 +23,10 @@ func _init(character_def: CharacterDef) -> void:
 	def = character_def
 	skills = character_def.base_skills.duplicate()
 	stats = character_def.stats.duplicate()
+	mp = character_def.base_mp
+	max_mp = mp
+	hp = character_def.base_hp
+	max_hp = hp
 
 
 func get_element_affinity(p_element: Element.Type) -> Affinity.Type:
@@ -63,9 +72,9 @@ func apply_cost(p_skill: Skill) -> int:
 		cost = get_percentage_cost(total, cost)
 	
 	if uses_mp:
-		mp -= cost
+		mp = maxi(mp-cost, 0)
 	else:
-		hp -= cost
+		hp = maxi(hp-cost, 0)
 	return cost
 
 
@@ -73,7 +82,7 @@ func deal_damage(p_amount: int) -> void:
 	hp = maxi(hp-p_amount, 0)
 
 func heal(p_amount: int) -> void:
-	hp = mini(hp+p_amount, 100) # TODO: Max hp
+	hp = mini(hp+p_amount, max_hp)
 
 func get_skills() -> Array[Skill]:
 	# TODO: Account for new skills from levels, equipment, story
@@ -81,16 +90,28 @@ func get_skills() -> Array[Skill]:
 
 
 func get_strength_damage_multiplier() -> float:
-	return float(stats.strength) * 0.01
+	return 1.0 + float(stats.strength) * 0.01
 
 func get_magic_damage_multiplier() -> float:
-	return float(stats.magic) * 0.01
+	return 1.0 + float(stats.magic) * 0.01
 
 func get_defense_damage_multiplier() -> float:
-	return float(stats.endurance) * 0.01
+	return 1.0 - float(stats.endurance) * 0.01
 
 func get_crit_chance_multiplier() -> float:
-	return float(stats.luck) * 0.005
+	return 1.0 + float(stats.luck) * 0.005
 
 func get_crit_avoid_multiplier() -> float:
-	return float(stats.luck) * 0.0075
+	return 1.0 - float(stats.luck) * 0.00075
+
+func get_accuracy_multiplier() -> float:
+	return (1.0 + float(stats.agility) * 0.005) * modifiers.get_speed_accuracy_multiplier()
+
+func get_dodge_multiplier() -> float:
+	return (1.0 - float(stats.agility) * 0.00075) * modifiers.get_speed_evasion_multiplier()
+
+func get_attack_buff_multiplier() -> float:
+	return modifiers.get_attack_multiplier()
+
+func get_defense_buff_multiplier() -> float:
+	return modifiers.get_defense_multiplier()

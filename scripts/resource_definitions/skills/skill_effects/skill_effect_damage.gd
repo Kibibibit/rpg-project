@@ -51,15 +51,13 @@ func apply_effect(p_caster: Character, p_target: Character) -> Array[SkillEffect
 	var blocked: bool = target_affinity == Affinity.BLOCK
 	var final_crit_chance: float = 0.0
 	if !blocked and can_crit:
-		var crit_chance_multiplier: float = p_caster.get_crit_chance_multipler()
-		crit_chance_multiplier -= p_target.get_crit_avoid_multiplier()
-		final_crit_chance = crit_chance * (1.0 + crit_chance_multiplier)
+		final_crit_chance = crit_chance * p_caster.get_crit_chance_multiplier()
+		final_crit_chance *= p_target.get_crit_avoid_multiplier()
 	
 	var final_accuracy: float = 0.0
 	if can_miss:
-		var accuracy_multiplier: float = p_caster.get_accuracy_multipler()
-		accuracy_multiplier -= p_target.get_dodge_multiplier()
-		final_accuracy = base_accuracy * (1.0 + accuracy_multiplier)
+		final_accuracy = base_accuracy * p_caster.get_accuracy_multiplier()
+		final_accuracy *= p_target.get_dodge_multiplier()
 	
 	var any_hits: bool = false
 	
@@ -139,12 +137,15 @@ func _apply_hit(
 	else:
 		base_multiplier = p_caster.get_magic_damage_multiplier()
 	
-	base_multiplier -= p_target.get_defense_damage_multiplier()
+	base_multiplier *= p_target.get_defense_damage_multiplier()
 		
 	## TODO: Apply modifiers from buffs here
-	base_power *= base_multiplier + 1.0
+	base_power *= base_multiplier
 	
 	base_power *= _AFFINITY_DAMAGE_MULT[target_affinity]
+	
+	base_power *= p_caster.get_attack_buff_multiplier()
+	base_power *= p_target.get_defense_buff_multiplier()
 	
 	var damage: int = maxi(1, floori(base_power))
 	

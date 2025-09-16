@@ -5,6 +5,11 @@ class_name CharacterDef
 var character_name: String
 
 @export
+var base_hp: int
+@export
+var base_mp: int
+
+@export
 var stats: Stats
 
 @export
