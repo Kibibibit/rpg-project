@@ -9,9 +9,6 @@ script = ExtResource("2_8gu2f")
 power = 10
 element = 1
 base_accuracy = 0.8
-can_miss = true
-min_hits_per_target = 1
-max_hits_per_target = 1
 metadata/_custom_type_script = "uid://ckr577ue2sldj"
 
 [resource]
@@ -19,12 +16,5 @@ resource_name = "SkillBasicAttackBash"
 script = ExtResource("2_ry0gt")
 skill_name = "Attack"
 effects = Array[ExtResource("1_px2of")]([SubResource("Resource_ry0gt")])
-cost = 0
-cost_type = 0
-percentage_cost = false
-allowed_to_kill = false
 target_group = 4
-target_type = 0
-min_random_targets = 1
-max_random_targets = 1
 metadata/_custom_type_script = "uid://c2hknhxilubrr"

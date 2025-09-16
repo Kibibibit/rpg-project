@@ -167,3 +167,7 @@ func _apply_hit(
 			false
 		))
 	return results
+
+
+func get_type() -> Type:
+	return Type.DAMAGE
