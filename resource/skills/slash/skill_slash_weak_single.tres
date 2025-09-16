@@ -7,11 +7,6 @@
 [sub_resource type="Resource" id="Resource_00yoj"]
 script = ExtResource("2_7tdqa")
 power = 25
-element = 0
-base_accuracy = 0.99
-can_miss = true
-min_hits_per_target = 1
-max_hits_per_target = 1
 metadata/_custom_type_script = "uid://ckr577ue2sldj"
 
 [resource]
@@ -21,10 +16,5 @@ skill_name = "Cut"
 effects = Array[ExtResource("1_fx8k0")]([SubResource("Resource_00yoj")])
 cost = 5
 cost_type = 1
-percentage_cost = false
-allowed_to_kill = false
 target_group = 4
-target_type = 0
-min_random_targets = 1
-max_random_targets = 1
 metadata/_custom_type_script = "uid://c2hknhxilubrr"

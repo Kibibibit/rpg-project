@@ -1,7 +1,6 @@
 @abstract
 extends Resource
 class_name SkillEffect
-## TODO: Make abstract once that's released
 
 enum _EffectType {
 	DAMAGE,
