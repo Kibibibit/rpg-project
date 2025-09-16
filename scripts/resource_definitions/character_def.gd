@@ -8,6 +8,8 @@ var character_name: String
 var base_hp: int
 @export
 var base_mp: int
+@export
+var base_level: int
 
 @export
 var stats: Stats

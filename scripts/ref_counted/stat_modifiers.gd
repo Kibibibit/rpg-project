@@ -1,6 +1,8 @@
 extends RefCounted
 class_name StatModifiers
 
+## TODO: Ailment and crit chance modifiers
+
 const POSITIVE_ATTACK_STEP: float = 0.15
 const NEGATIVE_ATTACK_STEP: float = 0.10
 const POSITIVE_DEFENSE_STEP: float = 0.15

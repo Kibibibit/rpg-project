@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b63e4n2mxcose"]
+
+[node name="BattleSceneVisualsRoot" type="Node2D"]

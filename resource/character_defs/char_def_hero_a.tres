@@ -23,6 +23,9 @@ metadata/_custom_type_script = "uid://pquyfjakk48m"
 [resource]
 script = ExtResource("2_pjyus")
 character_name = "Alfred"
+base_hp = 250
+base_mp = 40
+base_level = 1
 stats = SubResource("Resource_ogeim")
 basic_attack = ExtResource("2_jfpeu")
 base_skills = Array[ExtResource("1_isvta")]([ExtResource("2_ebrnc"), ExtResource("3_qrgoc"), ExtResource("4_ogeim"), ExtResource("5_357ym"), ExtResource("6_iljfu"), ExtResource("7_rnvlj")])

@@ -23,6 +23,9 @@ metadata/_custom_type_script = "uid://pquyfjakk48m"
 [resource]
 script = ExtResource("2_crs0r")
 character_name = "Belmont"
+base_hp = 300
+base_mp = 100
+base_level = 1
 stats = SubResource("Resource_136o1")
 basic_attack = ExtResource("2_3l8mn")
 base_skills = Array[ExtResource("1_q83ot")]([ExtResource("2_o3oov"), ExtResource("3_5t6am"), ExtResource("4_136o1"), ExtResource("5_jpsl1"), ExtResource("6_4dj4d"), ExtResource("7_l6g45")])

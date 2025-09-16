@@ -3,6 +3,8 @@ class_name Character
 
 var def: CharacterDef
 
+var level: int = 1
+var character_name: String
 
 var mp: int = 100
 var hp: int = 100
@@ -27,6 +29,8 @@ func _init(character_def: CharacterDef) -> void:
 	max_mp = mp
 	hp = character_def.base_hp
 	max_hp = hp
+	level = character_def.base_level
+	character_name = character_def.character_name
 
 
 func get_element_affinity(p_element: Element.Type) -> Affinity.Type:

@@ -8,10 +8,6 @@
 script = ExtResource("2_deamm")
 power = 20
 element = 3
-base_accuracy = 0.99
-can_miss = true
-min_hits_per_target = 1
-max_hits_per_target = 1
 metadata/_custom_type_script = "uid://ckr577ue2sldj"
 
 [resource]
@@ -20,11 +16,6 @@ script = ExtResource("2_hk8on")
 skill_name = "Snowfall"
 effects = Array[ExtResource("1_0ib8n")]([SubResource("Resource_hk8on")])
 cost = 10
-cost_type = 0
-percentage_cost = false
-allowed_to_kill = false
 target_group = 4
 target_type = 1
-min_random_targets = 1
-max_random_targets = 1
 metadata/_custom_type_script = "uid://c2hknhxilubrr"

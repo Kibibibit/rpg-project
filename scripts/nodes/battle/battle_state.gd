@@ -49,9 +49,21 @@ func get_character_by_id(p_id: int) -> Character:
 	return null
 
 func _sort_characters_by_initiative(a_id: int, b_id: int) -> bool:
-	var a_initiative: int = get_character_by_id(a_id).get_initiative()
-	var b_initiative: int = get_character_by_id(b_id).get_initiative()
-	return a_initiative > b_initiative
+	var a: Character = get_character_by_id(a_id)
+	var b: Character = get_character_by_id(b_id)
+	
+	if a.get_initiative() != b.get_initiative():
+		return a.get_initiative() > b.get_initiative()
+	
+	if a.level != b.level:
+		return a.level > b.level
+		
+	if a.character_name != b.character_name:
+		return a.character_name.naturalnocasecmp_to(b.character_name) == 0
+	
+	return a_id > b_id
+				
+
 	
 func get_next_character() -> Character:
 	var c_id: int = turn_order.pop_front()

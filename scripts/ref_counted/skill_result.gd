@@ -1,7 +1,7 @@
 extends RefCounted
 class_name SkillResult
 
-# TODO: Implement
+# TODO: Implement. Check crit/weakness stuff on add?
 
 
 var effect_results: Array[SkillEffectResult] = []

@@ -48,6 +48,8 @@ func apply_effect(p_caster: Character, p_target: Character) -> Array[SkillEffect
 	
 	var target_affinity := p_target.get_element_affinity(element)
 	
+	## TODO: Ailment/elemental related dodging?
+	
 	var blocked: bool = target_affinity == Affinity.BLOCK
 	var final_crit_chance: float = 0.0
 	if !blocked and can_crit:
@@ -138,14 +140,15 @@ func _apply_hit(
 		base_multiplier = p_caster.get_magic_damage_multiplier()
 	
 	base_multiplier *= p_target.get_defense_damage_multiplier()
-		
-	## TODO: Apply modifiers from buffs here
+	
 	base_power *= base_multiplier
 	
 	base_power *= _AFFINITY_DAMAGE_MULT[target_affinity]
 	
 	base_power *= p_caster.get_attack_buff_multiplier()
 	base_power *= p_target.get_defense_buff_multiplier()
+	
+	# TODO: Elemental based buffs?
 	
 	var damage: int = maxi(1, floori(base_power))
 	

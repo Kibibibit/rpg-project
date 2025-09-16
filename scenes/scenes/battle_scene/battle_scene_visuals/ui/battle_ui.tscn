@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpee84quochvr"]
+
+[ext_resource type="Script" uid="uid://dtvfkjc85geiv" path="res://scenes/scenes/battle_scene/battle_scene_visuals/ui/battle_ui.gd" id="1_r6bdy"]
+[ext_resource type="PackedScene" uid="uid://cs8e53cc18ikl" path="res://scenes/scenes/battle_scene/battle_scene_visuals/ui/turn_order_visualiser/turn_order_visualiser.tscn" id="1_wf8e1"]
+
+[node name="BattleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_r6bdy")
+
+[node name="BattleTurnOrderVisualiser" parent="." instance=ExtResource("1_wf8e1")]
+layout_mode = 1

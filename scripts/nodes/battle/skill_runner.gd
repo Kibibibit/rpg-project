@@ -12,9 +12,9 @@ func run_skill(p_skill: Skill, p_character: Character, p_target_ids: Array[int])
 		targets.append(Character.from_id(target_id))
 	
 	print("SKILL_RUNNER: Character<%s> using Skill<%s> on target Characters<[%s]>" % [
-		p_character.def.character_name,
+		p_character.character_name,
 		p_skill.skill_name,
-		targets.reduce(func(acc: String, p_c: Character): return acc + ("" if acc.is_empty() else ", ") + p_c.def.character_name, "")
+		targets.reduce(func(acc: String, p_c: Character): return acc + ("" if acc.is_empty() else ", ") + p_c.character_name, "")
 	])
 	
 	var result := SkillResult.new()
