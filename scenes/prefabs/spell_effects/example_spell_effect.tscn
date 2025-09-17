@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddtf1dvkm5rx8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_seybx"]
+
+[sub_resource type="Curve" id="Curve_seybx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_irisl"]
+curve = SubResource("Curve_seybx")
+
+[sub_resource type="Curve" id="Curve_20iif"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.22222222, 0.34831464), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xepqw"]
+curve = SubResource("Curve_20iif")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_irisl"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 115.000015
+spread = 15.275
+initial_velocity_min = 8.809999
+initial_velocity_max = 8.809999
+gravity = Vector3(0, 0, 0)
+scale_min = 1.5
+scale_max = 1.75
+scale_curve = SubResource("CurveTexture_xepqw")
+alpha_curve = SubResource("CurveTexture_irisl")
+
+[node name="ExampleSpellEffect" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 30
+texture = SubResource("PlaceholderTexture2D_seybx")
+process_material = SubResource("ParticleProcessMaterial_irisl")

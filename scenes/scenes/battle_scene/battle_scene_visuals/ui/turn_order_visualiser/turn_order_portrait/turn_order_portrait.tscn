@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2hfkv452563h"]
+[gd_scene load_steps=5 format=3 uid="uid://b2hfkv452563h"]
 
 [ext_resource type="Texture2D" uid="uid://dtko6lfn24q82" path="res://resource/textures/ui/portrait.png" id="1_02b1q"]
 [ext_resource type="Script" uid="uid://xydjnb7wm37l" path="res://scenes/scenes/battle_scene/battle_scene_visuals/ui/turn_order_visualiser/turn_order_portrait/turn_order_portrait.gd" id="1_40boe"]
@@ -6,50 +6,6 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_02b1q"]
 font_size = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02b1q"]
-bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5529412)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otw2i"]
-bg_color = Color(0, 0.6745098, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing = false
-
-[sub_resource type="LabelSettings" id="LabelSettings_40boe"]
-font_size = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40boe"]
-bg_color = Color(4.813075e-07, 0.52056855, 0.80321413, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing = false
 
 [node name="TurnOrderPortrait" type="Control"]
 texture_filter = 1
@@ -80,44 +36,4 @@ offset_right = 64.0
 offset_bottom = 116.0
 text = "NAME"
 label_settings = SubResource("LabelSettings_02b1q")
-horizontal_alignment = 1
-
-[node name="HpProgressBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 115.0
-offset_right = 64.0
-offset_bottom = 124.0
-theme_override_styles/background = SubResource("StyleBoxFlat_02b1q")
-theme_override_styles/fill = SubResource("StyleBoxFlat_otw2i")
-show_percentage = false
-
-[node name="HpLabel" type="Label" parent="HpProgressBar"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = -3.0
-offset_right = 64.0
-offset_bottom = 11.0
-text = "HP/HP"
-label_settings = SubResource("LabelSettings_40boe")
-horizontal_alignment = 1
-
-[node name="MpProgressBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 125.405
-offset_right = 64.0
-offset_bottom = 134.405
-theme_override_styles/background = SubResource("StyleBoxFlat_02b1q")
-theme_override_styles/fill = SubResource("StyleBoxFlat_40boe")
-show_percentage = false
-
-[node name="MpLabel" type="Label" parent="MpProgressBar"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = -3.0
-offset_right = 64.0
-offset_bottom = 11.0
-text = "MP/MP"
-label_settings = SubResource("LabelSettings_40boe")
 horizontal_alignment = 1

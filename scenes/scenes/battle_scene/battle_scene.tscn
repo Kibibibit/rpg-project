@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpexcnoh4ln5l"]
+[gd_scene load_steps=6 format=3 uid="uid://bpexcnoh4ln5l"]
 
 [ext_resource type="Script" uid="uid://bxdfmvir074rn" path="res://scripts/nodes/battle/battle_runner.gd" id="1_bcrjf"]
 [ext_resource type="Script" uid="uid://chmwipf70aul0" path="res://scenes/scenes/battle_scene/battle_scene.gd" id="1_kgbuy"]
 [ext_resource type="Script" uid="uid://cauv0ocrsdfc2" path="res://scripts/nodes/battle/ai_controller.gd" id="2_j7fpl"]
 [ext_resource type="Script" uid="uid://cfc040vam32k1" path="res://scripts/nodes/battle/skill_runner.gd" id="4_47328"]
 [ext_resource type="PackedScene" uid="uid://b63e4n2mxcose" path="res://scenes/scenes/battle_scene/battle_scene_visuals/battle_scene_visuals_root.tscn" id="5_56lyg"]
-[ext_resource type="PackedScene" uid="uid://bpee84quochvr" path="res://scenes/scenes/battle_scene/battle_scene_visuals/ui/battle_ui.tscn" id="6_m5gns"]
 
 [node name="BattleScene" type="Node"]
 script = ExtResource("1_kgbuy")
@@ -23,5 +22,3 @@ metadata/_custom_type_script = "uid://cauv0ocrsdfc2"
 [node name="SkillRunner" type="Node" parent="BattleRunner"]
 script = ExtResource("4_47328")
 metadata/_custom_type_script = "uid://cfc040vam32k1"
-
-[node name="BattleUI" parent="." instance=ExtResource("6_m5gns")]

@@ -70,14 +70,13 @@ func _pre_battle_step(p_player_characters: Array[Character], p_enemy_characters:
 	
 	
 	battle_state = BattleState.new(p_player_characters, p_enemy_characters)
-	var characters: Array[Character] = p_player_characters
+	var characters: Array[Character] = p_player_characters.duplicate()
 	characters.append_array(p_enemy_characters)
 	_update_duplicate_names(characters)
 	battle_state.round_number = 0
 	
 	SignalBus.Battle.emit_do_battle_start(p_player_characters, p_enemy_characters)
-	
-	_on_battle_start_complete_signal.emit.call_deferred()
+
 
 func _update_duplicate_names(
 	p_characters: Array[Character]

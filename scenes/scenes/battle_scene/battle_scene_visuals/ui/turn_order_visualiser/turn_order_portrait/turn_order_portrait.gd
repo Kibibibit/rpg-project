@@ -16,14 +16,6 @@ static func new_portrait(p_character: Character) -> TurnOrderPortrait:
 var portrait_rect: TextureRect = %PortraitRect
 @onready
 var name_label: Label = %NameLabel
-@onready
-var hp_bar: ProgressBar = %HpProgressBar
-@onready
-var mp_bar: ProgressBar = %MpProgressBar
-@onready
-var hp_label: Label = %HpLabel
-@onready
-var mp_label: Label = %MpLabel
 
 var target_visible: bool = false
 var character: Character
@@ -36,14 +28,7 @@ func _ready() -> void:
 
 
 func update() -> void:
-	
 	name_label.text = character.character_name
-	hp_bar.value = (float(character.hp) / float(character.max_hp)) * 100.0
-	mp_bar.value = (float(character.mp) / float(character.max_mp)) * 100.0
-	
-	hp_label.text = "%d/%d" % [character.hp, character.max_hp]
-	mp_label.text = "%d/%d" % [character.mp, character.max_mp]
-	
 	
 	if _tween:
 		_tween.kill()

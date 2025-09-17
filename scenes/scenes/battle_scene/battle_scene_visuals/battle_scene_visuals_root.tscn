@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://b63e4n2mxcose"]
+[gd_scene load_steps=3 format=3 uid="uid://b63e4n2mxcose"]
 
-[node name="BattleSceneVisualsRoot" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bpee84quochvr" path="res://scenes/scenes/battle_scene/battle_scene_visuals/ui/battle_ui.tscn" id="1_d22mn"]
+[ext_resource type="PackedScene" uid="uid://u1iqplaufuh6" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/battle_scene_2d.tscn" id="2_gl5y0"]
+
+[node name="BattleSceneVisualsRoot" type="Node"]
+
+[node name="BattleUI" parent="." instance=ExtResource("1_d22mn")]
+
+[node name="BattleScene2d" parent="." instance=ExtResource("2_gl5y0")]

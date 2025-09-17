@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://u1iqplaufuh6"]
+
+[ext_resource type="Script" uid="uid://7cdjk6jdhbd4" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/party_parent.gd" id="1_2gcnc"]
+[ext_resource type="Script" uid="uid://coxtenmc75tdh" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/battle_scene_2d.gd" id="1_lnbsb"]
+
+[node name="BattleScene2d" type="Node2D"]
+script = ExtResource("1_lnbsb")
+
+[node name="PlayerParty" type="Node2D" parent="."]
+position = Vector2(183, 460)
+script = ExtResource("1_2gcnc")
+player_party = true
+
+[node name="EnemyParty" type="Node2D" parent="."]
+position = Vector2(442, 242)
+script = ExtResource("1_2gcnc")
