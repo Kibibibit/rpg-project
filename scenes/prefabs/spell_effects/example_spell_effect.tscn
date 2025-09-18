@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddtf1dvkm5rx8"]
+[gd_scene load_steps=8 format=3 uid="uid://ddtf1dvkm5rx8"]
+
+[ext_resource type="Script" uid="uid://dvi7q4jqcxr8a" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/vfx_instance.gd" id="1_irisl"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_seybx"]
+size = Vector2(5, 5)
 
 [sub_resource type="Curve" id="Curve_seybx"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -10,7 +13,7 @@ point_count = 2
 curve = SubResource("Curve_seybx")
 
 [sub_resource type="Curve" id="Curve_20iif"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.22222222, 0.34831464), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -2.730337, 0, 0, Vector2(0.18518518, 0.11235964), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_xepqw"]
@@ -30,8 +33,9 @@ scale_curve = SubResource("CurveTexture_xepqw")
 alpha_curve = SubResource("CurveTexture_irisl")
 
 [node name="ExampleSpellEffect" type="Node2D"]
+script = ExtResource("1_irisl")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 30
+amount = 50
 texture = SubResource("PlaceholderTexture2D_seybx")
 process_material = SubResource("ParticleProcessMaterial_irisl")

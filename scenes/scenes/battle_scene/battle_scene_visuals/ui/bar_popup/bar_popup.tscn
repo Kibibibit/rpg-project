@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://x1ksn2uqixhx"]
+
+[ext_resource type="Script" uid="uid://c2h1edise82t" path="res://scenes/scenes/battle_scene/battle_scene_visuals/ui/bar_popup/bar_popup.gd" id="1_73h3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct1ou"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+anti_aliasing = false
+
+[sub_resource type="Gradient" id="Gradient_ct1ou"]
+colors = PackedColorArray(0.972549, 0.7882353, 0.17254902, 1, 0.6862745, 0.30980393, 0.16078432, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_73h3k"]
+gradient = SubResource("Gradient_ct1ou")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rulqy"]
+texture = SubResource("GradientTexture1D_73h3k")
+
+[node name="BarPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73h3k")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 21.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ct1ou")
+theme_override_styles/fill = SubResource("StyleBoxTexture_rulqy")
+max_value = 1.0
+show_percentage = false
+
+[node name="LabelParent" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0

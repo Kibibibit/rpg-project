@@ -17,7 +17,7 @@ func run_skill(p_skill: Skill, p_character: Character, p_target_ids: Array[int])
 		targets.reduce(func(acc: String, p_c: Character): return acc + ("" if acc.is_empty() else ", ") + p_c.character_name, "")
 	])
 	
-	var result := SkillResult.new()
+	var result := SkillResult.new(p_skill)
 	
 	var pre_cost: int = p_character.get_resource_total(p_skill.cost_type)
 	

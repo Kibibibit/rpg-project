@@ -136,9 +136,7 @@ func _run_skill_step(p_skill: Skill, p_character: Character,  p_selected_targets
 
 func _trigger_animation_step(p_skill_result: SkillResult) -> void:
 	SignalBus.Battle.emit_do_skill_animation(p_skill_result)
-	# TODO: Frontend signalling. For now, maybe just console logs?
-	await get_tree().create_timer(0.5).timeout
-	SignalBus.Battle.emit_skill_animation_complete.call_deferred()
+
 
 func _cleanup_post_skill_step() -> void:
 	print("BATTLE_RUNNER: Skill cleanup step!")

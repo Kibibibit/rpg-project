@@ -4,17 +4,12 @@ class_name BattleSignalBus
 ## TODO: Look into what signals need to be deferred, or if a system for 
 ## deferring signals conditionally is needed
 
+var UI := BattleUISignalBus.new()
+
 signal do_battle_start(s_player_party: Array[Character], s_enemy_party: Array[Character])
 func emit_do_battle_start(p_player_party: Array[Character], p_enemy_party: Array[Character]) -> void:
 	do_battle_start.emit(p_player_party, p_enemy_party)
 
-signal on_character_ready(s_character_id: int)
-func emit_on_character_ready(p_character_id: int) -> void:
-	on_character_ready.emit(p_character_id)
-
-signal on_party_ready(s_is_player: bool)
-func emit_on_party_ready(p_is_player: bool) -> void:
-	on_party_ready.emit(p_is_player)
 
 signal on_battle_start_complete()
 func emit_on_battle_start_complete() -> void:

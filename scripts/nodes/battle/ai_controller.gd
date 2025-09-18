@@ -22,7 +22,7 @@ func _on_request_ai_skill(p_character: Character, p_battle_state: BattleState, p
 		enemy_party = p_battle_state.get_enemy_character_ids()
 	else:
 		ally_party = p_battle_state.get_enemy_character_ids()
-		enemy_party = p_battle_state.get_enemy_character_ids()
+		enemy_party = p_battle_state.get_player_character_ids()
 	
 	var chosen_skill: Skill = null
 	if (possible_skills.is_empty()):

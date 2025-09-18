@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterDef" load_steps=6 format=3 uid="uid://cy5n7pxjkxlma"]
 
 [ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_qf7at"]
-[ext_resource type="Resource" uid="uid://dxyvvsgqcidm5" path="res://resource/skills/basic_attacks/skill_basic_attack_bash.tres" id="2_5bt4f"]
+[ext_resource type="Resource" uid="uid://dwurpevkp8ssx" path="res://resource/skills/basic_attacks/skill_basic_attack_multi_slash.tres" id="2_5bt4f"]
 [ext_resource type="Script" uid="uid://dk6gcgisgglrj" path="res://scripts/resource_definitions/character_def.gd" id="2_07fwf"]
 [ext_resource type="Script" uid="uid://pquyfjakk48m" path="res://scripts/resource_definitions/stats.gd" id="3_07fwf"]
 

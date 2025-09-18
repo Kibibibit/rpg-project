@@ -66,7 +66,7 @@ func apply_effect(p_caster: Character, p_target: Character) -> Array[SkillEffect
 	for _i in hits:
 		
 		if can_miss:
-			if randf() <= final_accuracy:
+			if randf() > final_accuracy:
 				results.append(SkillEffectResultDamage.new(
 					p_caster, 
 					p_target,
@@ -95,8 +95,7 @@ func apply_effect(p_caster: Character, p_target: Character) -> Array[SkillEffect
 		any_hits = target_affinity != Affinity.REFLECT
 		
 		if can_crit and !blocked:
-			did_crit = randf() < final_crit_chance
-		
+			did_crit = randf() <= final_crit_chance
 		results.append_array(_apply_hit(p_caster, p_target, false, did_crit))
 	
 	if any_hits:
@@ -111,7 +110,6 @@ func _apply_hit(
 	p_is_reflected: bool, 
 	p_is_crit: bool
 ) -> Array[SkillEffectResult]:
-	
 	var results : Array[SkillEffectResult] = []
 	var target_affinity := p_target.get_element_affinity(element)
 	
@@ -149,7 +147,6 @@ func _apply_hit(
 	base_power *= p_target.get_defense_buff_multiplier()
 	
 	# TODO: Elemental based buffs?
-	
 	var damage: int = maxi(1, floori(base_power))
 	
 	if target_affinity == Affinity.ABSORB:
