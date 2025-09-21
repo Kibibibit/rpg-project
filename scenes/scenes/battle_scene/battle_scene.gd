@@ -3,7 +3,7 @@ extends Node
 
 
 func _ready() -> void:
-	var battle_runner: BattleRunner = $BattleRunner
+	var state_machine: BattleStateMachine = $BattleStateMachine
 	
 	var char_def_player_a: CharacterDef = load("res://resource/character_defs/char_def_hero_a.tres")
 	var char_def_player_b: CharacterDef = load("res://resource/character_defs/char_def_hero_b.tres")
@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 	var char_def_enemy_a: CharacterDef = load("res://resource/character_defs/char_def_enemy_a.tres")
 	
-	battle_runner.run_battle(
+	var battle_state_data := BattleStateData.new(
 		[
 			Character.new(char_def_player_a),
 			Character.new(char_def_player_b),
@@ -26,3 +26,5 @@ func _ready() -> void:
 			Character.new(char_def_enemy_a)
 		]
 	)
+	
+	state_machine.start_state_machine(battle_state_data)

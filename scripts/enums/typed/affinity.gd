@@ -1,7 +1,7 @@
 extends RefCounted
 class_name Affinity
 
-enum _AffinityType {
+enum Type {
 	NORMAL,
 	WEAK,
 	RESIST,
@@ -9,8 +9,6 @@ enum _AffinityType {
 	REFLECT,
 	ABSORB
 }
-
-const Type = _AffinityType
 
 const NORMAL := Type.NORMAL
 const WEAK := Type.WEAK

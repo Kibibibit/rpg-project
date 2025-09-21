@@ -45,6 +45,7 @@ func get_initiative() -> int:
 
 func clear_battle_state() -> void:
 	# TODO: Clear temporary battle state like buffs/debuffs
+	modifiers.reset()
 	pass
 
 func get_percentage_cost(p_resource:int, p_percentage: int) -> int:

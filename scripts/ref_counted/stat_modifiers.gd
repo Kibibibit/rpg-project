@@ -14,6 +14,10 @@ var attack_modifier: int = 0
 var defense_modifier: int = 0
 var speed_modifier: int = 0
 
+func reset() -> void:
+	attack_modifier = 0
+	defense_modifier = 0
+	speed_modifier = 0
 
 func _get_modifier(
 	p_modifier: int, 

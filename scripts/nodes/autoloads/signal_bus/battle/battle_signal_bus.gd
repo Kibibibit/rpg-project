@@ -6,6 +6,15 @@ class_name BattleSignalBus
 
 var UI := BattleUISignalBus.new()
 
+signal battle_event(s_event: BattleStateEvent)
+func emit_battle_event(p_event: BattleStateEvent) -> void:
+	battle_event.emit(p_event)
+
+signal add_battle_character(s_battle_character: BattleCharacter, s_team: Team.Type)
+func emit_add_battle_character(p_battle_character: BattleCharacter, p_team: Team.Type) -> void:
+	add_battle_character.emit(p_battle_character, p_team)
+
+
 signal do_battle_start(s_player_party: Array[Character], s_enemy_party: Array[Character])
 func emit_do_battle_start(p_player_party: Array[Character], p_enemy_party: Array[Character]) -> void:
 	do_battle_start.emit(p_player_party, p_enemy_party)

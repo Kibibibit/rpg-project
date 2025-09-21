@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://u1iqplaufuh6"]
 
-[ext_resource type="Script" uid="uid://7cdjk6jdhbd4" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/party_parent.gd" id="1_2gcnc"]
+[ext_resource type="Script" uid="uid://7cdjk6jdhbd4" path="res://scenes/scenes/battle_scene/battle_scene_visuals/party_parent.gd" id="1_2gcnc"]
 [ext_resource type="Script" uid="uid://coxtenmc75tdh" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/battle_scene_2d.gd" id="1_lnbsb"]
 [ext_resource type="Script" uid="uid://dsh2a7mhtgrag" path="res://scenes/scenes/battle_scene/battle_scene_visuals/2d/vfx_manager.gd" id="3_gd11s"]
 

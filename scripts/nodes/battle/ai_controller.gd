@@ -14,7 +14,10 @@ func _setup_signals() -> void:
 func _on_request_ai_skill(p_character: Character, p_battle_state: BattleState, p_is_player: bool) -> void:
 	## TODO: Proper implementation
 	
-	var possible_skills: Array[Skill] = p_character.get_skills().filter(func(s: Skill): return p_character.can_cast_skill(s))
+	var possible_skills: Array[Skill] = p_character.get_skills().filter(
+		func(s: Skill): return p_character.can_cast_skill(s)
+	)
+	
 	var ally_party: Array[int] = []
 	var enemy_party: Array[int] = []
 	if p_is_player:

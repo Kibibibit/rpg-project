@@ -1,14 +1,12 @@
 extends RefCounted
 class_name ConditionalTrigger
 
-enum _ConditionalTriggerType {
+enum Type {
 	ON_HIT,
 	ON_CRIT,
 	ON_WEAKNESS,
 	ON_RESIST
 }
-
-const Type = _ConditionalTriggerType
 
 const ON_HIT := Type.ON_HIT
 const ON_CRIT := Type.ON_CRIT
