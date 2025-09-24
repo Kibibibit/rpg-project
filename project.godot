@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="rpg-project"
-run/main_scene="uid://bpexcnoh4ln5l"
+run/main_scene="uid://bk385h1vpelpa"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-SignalBus="*res://scripts/nodes/autoloads/signal_bus/signal_bus.gd"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/todo_finder/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://scripts/resource_definitions/": "blue"
+}

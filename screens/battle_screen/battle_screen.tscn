@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://j6kcxuokdwm4"]
+
+[ext_resource type="Script" uid="uid://bb4ju1ctkesc1" path="res://scripts/battle/battle_manager_node.gd" id="1_7dq25"]
+[ext_resource type="Script" uid="uid://c5yjhca76wmdu" path="res://screens/battle_screen/battle_screen.gd" id="1_igypa"]
+[ext_resource type="Script" uid="uid://dxn7olsx2pjm" path="res://scripts/battle/battle_state_data_node.gd" id="2_o0e4x"]
+[ext_resource type="Script" uid="uid://bh6flmjtv8viw" path="res://scripts/battle/state_nodes/battle_state_initial.gd" id="2_u8b5x"]
+[ext_resource type="Script" uid="uid://cuprvkxxgdaix" path="res://scripts/battle/state_nodes/battle_state_start_round.gd" id="3_u8b5x"]
+[ext_resource type="Script" uid="uid://fupj7t1xhcy1" path="res://scripts/battle/state_nodes/battle_state_start_turn.gd" id="5_18xyh"]
+[ext_resource type="Script" uid="uid://eiwbb8lccvw7" path="res://scripts/battle/battle_event_bus_node.gd" id="5_c5had"]
+[ext_resource type="Script" uid="uid://bfl4b870jxuc3" path="res://scripts/battle/battle_logger_node.gd" id="6_qid0y"]
+[ext_resource type="PackedScene" uid="uid://dg7442ub821gg" path="res://screens/battle_screen/ui/battle_screen_ui.tscn" id="9_srval"]
+
+[node name="BattleScreen" type="Node"]
+script = ExtResource("1_igypa")
+
+[node name="BattleManagerNode" type="Node" parent="." node_paths=PackedStringArray("battle_event_bus", "battle_state_data", "initial_state")]
+script = ExtResource("1_7dq25")
+battle_event_bus = NodePath("../BattleEventBusNode")
+battle_state_data = NodePath("../BattleStateDataNode")
+initial_state = NodePath("BattleStateInitial")
+metadata/_custom_type_script = "uid://bb4ju1ctkesc1"
+
+[node name="BattleStateInitial" type="Node" parent="BattleManagerNode" node_paths=PackedStringArray("round_started_state")]
+script = ExtResource("2_u8b5x")
+round_started_state = NodePath("../BattleStateStartRound")
+metadata/_custom_type_script = "uid://bh6flmjtv8viw"
+
+[node name="BattleStateStartRound" type="Node" parent="BattleManagerNode" node_paths=PackedStringArray("start_turn_state")]
+script = ExtResource("3_u8b5x")
+start_turn_state = NodePath("../BattleStateStartTurn")
+metadata/_custom_type_script = "uid://cuprvkxxgdaix"
+
+[node name="BattleStateStartTurn" type="Node" parent="BattleManagerNode"]
+script = ExtResource("5_18xyh")
+metadata/_custom_type_script = "uid://fupj7t1xhcy1"
+
+[node name="BattleStateDataNode" type="Node" parent="."]
+script = ExtResource("2_o0e4x")
+metadata/_custom_type_script = "uid://dxn7olsx2pjm"
+
+[node name="BattleEventBusNode" type="Node" parent="."]
+script = ExtResource("5_c5had")
+metadata/_custom_type_script = "uid://eiwbb8lccvw7"
+
+[node name="BattleLoggerNode" type="Node" parent="." node_paths=PackedStringArray("battle_event_bus")]
+script = ExtResource("6_qid0y")
+battle_event_bus = NodePath("../BattleEventBusNode")
+metadata/_custom_type_script = "uid://bfl4b870jxuc3"
+
+[node name="BattleScreenUI" parent="." node_paths=PackedStringArray("battle_event_bus", "battle_state_data") instance=ExtResource("9_srval")]
+battle_event_bus = NodePath("../BattleEventBusNode")
+battle_state_data = NodePath("../BattleStateDataNode")
