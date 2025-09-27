@@ -10,6 +10,7 @@ var context: BattleContext
 @onready var pass_button: Button = $PassButton
 
 
+
 func _ready() -> void:
 	visible = false
 	context = ContextManager.get_context(Context.Type.BATTLE) as BattleContext
@@ -31,24 +32,19 @@ func _on_hide_action_menu() -> void:
 	visible = false
 
 func _on_attack_pressed() -> void:
-	## TODO: Generic skill id for attack
-	SignalBus.Battle.skill_selected.emit(1)
+	SignalBus.Battle.action_selected.emit(Action.ATTACK)
 
 func _on_skill_pressed() -> void:
-	## TODO: New pop up for skill selection
-	SignalBus.Battle.skill_selected.emit(2)
+	SignalBus.Battle.action_selected.emit(Action.SKILL)
 
 func _on_item_pressed() -> void:
-	## TODO: New pop up for item selection
-	SignalBus.Battle.skill_selected.emit(3)
+	SignalBus.Battle.action_selected.emit(Action.ITEM)
 
 func _on_defend_pressed() -> void:
-	## TODO: Generic skill id for defend
-	SignalBus.Battle.skill_selected.emit(4)
+	SignalBus.Battle.action_selected.emit(Action.DEFEND)
 
 func _on_pass_pressed() -> void:
-	## TODO: Generic skill id for pass
-	SignalBus.Battle.skill_selected.emit(5)
+	SignalBus.Battle.action_selected.emit(Action.PASS)
 
 
 	

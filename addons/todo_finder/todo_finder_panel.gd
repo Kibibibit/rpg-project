@@ -7,7 +7,7 @@ signal scanned_file()
 const TODO_IGNORE_PATH: String = "res://TODOignore.txt"
 const file_section_scene: PackedScene = preload("res://addons/todo_finder/todo_scroll_file_section.tscn")
 
-
+# TODO: That foldable thing
 # TODO: Check file changes before loading
 # TODO: Fix styling
 @onready

@@ -12,4 +12,4 @@ signal show_action_menu()
 
 signal hide_action_menu()
 
-signal skill_selected(s_skill_id: int)
+signal action_selected(action: Action.Type)

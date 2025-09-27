@@ -13,6 +13,8 @@ var round_number: int = 0
 
 var turn_order: Array[int] = []
 
+var current_skill: Skill = null
+
 func add_character(p_character: Character, p_team: Team.Type) -> void:
 	if character_map.has(p_character.id):
 		push_error("Character with ID %d already exists in BattleContext!" % p_character.id)

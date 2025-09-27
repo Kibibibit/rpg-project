@@ -10,6 +10,6 @@ func step() -> void:
 	if context.has_team_lost(Team.ENEMY):
 		## TODO: Push victory state
 		pass
-	## TODO: Other triggers that may end the match early
+	## TODO: Other triggers that may end the battle early
 	
 	push(BattleStateRound.new())
