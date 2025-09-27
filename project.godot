@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="rpg-project"
-run/main_scene="uid://bk385h1vpelpa"
+run/main_scene="uid://c3ovtwuf8rr5d"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://scripts/autoloads/signal_bus/signal_bus.gd"
+ContextManager="*res://scripts/context/context_manager.gd"
 
 [editor_plugins]
 

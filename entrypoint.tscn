@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk385h1vpelpa"]
-
-[ext_resource type="PackedScene" uid="uid://j6kcxuokdwm4" path="res://screens/battle_screen/battle_screen.tscn" id="1_r3k1k"]
-
-[node name="Entrypoint" type="Node"]
-
-[node name="BattleScreen" parent="." instance=ExtResource("1_r3k1k")]
