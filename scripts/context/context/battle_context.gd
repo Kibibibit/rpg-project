@@ -7,13 +7,17 @@ signal turn_order_changed()
 
 # Character data
 var character_map: Dictionary[int, Character] = {}
+var battle_actors: Dictionary[int, BattleActor] = {}
 var team_map: Dictionary[int, Team.Type] = {}
+
+var battle_camera: Camera3D
 
 var round_number: int = 0
 
 var turn_order: Array[int] = []
 
 var current_skill: Skill = null
+var current_targets: Array[int] = []
 
 func add_character(p_character: Character, p_team: Team.Type) -> void:
 	if character_map.has(p_character.id):
@@ -22,6 +26,14 @@ func add_character(p_character: Character, p_team: Team.Type) -> void:
 	character_map[p_character.id] = p_character
 	team_map[p_character.id] = p_team
 	character_added.emit(p_character.id)
+
+func add_battle_actor(p_character_id: int, p_actor: BattleActor) -> void:
+	if not character_map.has(p_character_id):
+		push_error("Tried to add an actor for a character that isnt in character map")
+		return
+	if battle_actors.has(p_character_id):
+		push_error("Battle actor for id %d alread exists in BattleContext!" % p_character_id)
+	battle_actors[p_character_id] = p_actor
 
 func add_characters(p_characters: Array, p_team: Team.Type) -> void:
 	for character in p_characters:
@@ -68,6 +80,13 @@ func get_current_character() -> Character:
 		push_error("get_current_character: No current character ID!")
 		return null
 	return get_character(char_id)
+	
+func get_character_team(p_character: Character) -> Team.Type:
+	if p_character.id in team_map:
+		return team_map[p_character.id]
+	else:
+		push_error("Character %s not in any team!" % p_character.definition.name)
+		return Team.NONE
 
 func advance_to_next_turn() -> void:
 	if turn_order.is_empty():
@@ -89,3 +108,21 @@ func get_type() -> Type:
 func get_control_mode(_p_character_id: int) -> CharacterControlMode.Type:
 	## TODO: implement
 	return CharacterControlMode.Type.PLAYER
+
+func get_valid_targets(p_caster: Character, p_skill: Skill) -> Array[int]:
+	var team: Team.Type = get_character_team(p_caster)
+	var valid_targets: Array[int] = []
+	for character in character_map.values():
+		if character.id == p_caster.id and Skill.GROUP_SELF & p_skill.target_group > 0:
+			valid_targets.append(character.id)
+			continue
+		
+		var other_team := get_character_team(character)
+		if team == other_team and (p_skill.target_group & Skill.GROUP_ALLIES) > 0 and character.id != p_caster.id:
+			valid_targets.append(character.id)
+		elif team != other_team and p_skill.target_group & Skill.GROUP_ENEMIES > 0:
+			valid_targets.append(character.id)
+	
+	## TODO: Second level of validation (Full health, no ailment. Effect based stuff)
+	
+	return valid_targets

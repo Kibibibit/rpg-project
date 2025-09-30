@@ -13,3 +13,9 @@ var name: String:
 
 @export
 var base_stats: CharacterStats = CharacterStats.new()
+
+@export
+var innate_skills: Array[Skill] = []
+
+@export
+var skills: Dictionary[int, Skill] = {}

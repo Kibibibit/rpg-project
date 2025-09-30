@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bdllrpjgpmwht"]
+
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_wgijd"]
+
+[resource]
+resource_name = "Fire Skill"
+script = ExtResource("1_wgijd")
+name = "Fire Skill"
+target_group = 4
+metadata/_custom_type_script = "uid://c2hknhxilubrr"

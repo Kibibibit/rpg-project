@@ -6,4 +6,6 @@
 resource_name = "Attack"
 script = ExtResource("1_4kku1")
 name = "Attack"
+target_type = null
+target_group = 4
 metadata/_custom_type_script = "uid://c2hknhxilubrr"

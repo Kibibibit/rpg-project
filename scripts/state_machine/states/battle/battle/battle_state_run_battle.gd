@@ -2,6 +2,10 @@ extends BattleStateNode
 class_name BattleStateRunBattle
 
 
+func enter() -> void:
+	for character in context.character_map.values():
+		SignalBus.Battle.spawn_actor.emit(character.id, context.get_character_team(character))
+	
 
 func step() -> void:
 	if context.has_team_lost(Team.PLAYER):

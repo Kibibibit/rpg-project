@@ -13,7 +13,6 @@ var context: BattleContext
 
 func _ready() -> void:
 	visible = false
-	context = ContextManager.get_context(Context.Type.BATTLE) as BattleContext
 	SignalBus.Battle.show_action_menu.connect(_on_show_action_menu)
 	SignalBus.Battle.hide_action_menu.connect(_on_hide_action_menu)
 	_connect_signals()
@@ -26,6 +25,7 @@ func _connect_signals() -> void:
 	pass_button.pressed.connect(_on_pass_pressed)
 
 func _on_show_action_menu() -> void:
+	context = ContextManager.get_context(Context.Type.BATTLE) as BattleContext
 	visible = true
 
 func _on_hide_action_menu() -> void:

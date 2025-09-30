@@ -11,6 +11,7 @@ func enter() -> void:
 
 func activate() -> void:
 	selected_action = Action.NONE
+	context.current_targets = []
 	context.current_skill = null
 	if context.get_current_character_id() != character_id or context.round_number != round_number:
 		pop()
@@ -30,24 +31,23 @@ func step() -> void:
 		return
 	match selected_action:
 		Action.ATTACK:
-			var skill_state := BattleStateSelectSkillTarget.new()
-			
-			## TODO: Some kind of loader for skills
+			# TODO: Loader for skills
+			# TODO: Confirmation state for defend/pass?
 			context.current_skill = preload("res://resource/skill/basic/skill_attack.tres")
-			push(skill_state)
+			push( BattleStateSelectTarget.new())
 		Action.DEFEND:
-			var skill_state := BattleStateSelectSkillTarget.new()
 			context.current_skill =  preload("res://resource/skill/basic/skill_defend.tres")
-			push(skill_state)
+			context.current_targets = [character_id]
+			push(BattleStateUseSkill.new())
 		Action.PASS:
-			var skill_state := BattleStateSelectSkillTarget.new()
+			context.current_targets = [character_id]
 			context.current_skill = preload("res://resource/skill/basic/skill_pass.tres")
-			push(skill_state)
+			push(BattleStateUseSkill.new())
 		Action.ITEM:
 			## TODO: Item selection state
 			pass
 		Action.SKILL:
-			## TODO: Skill selection state
+			push(BattleStateSelectSkill.new())
 			pass
 		_:
 			push_error("Unhandled action selected in BattleStatePlayerAction")

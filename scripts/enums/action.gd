@@ -1,5 +1,8 @@
-extends RefCounted
+## ENUM FILE
+@abstract
+extends EnumBase
 class_name Action
+
 
 enum Type {
 	NONE,
@@ -16,3 +19,12 @@ const SKILL := Type.SKILL
 const ITEM := Type.ITEM
 const DEFEND := Type.DEFEND
 const PASS := Type.PASS
+
+const VALUES: Array[Type] = [
+	NONE,
+	ATTACK,
+	SKILL,
+	ITEM,
+	DEFEND,
+	PASS
+]

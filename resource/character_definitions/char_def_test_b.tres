@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="CharacterDefinition" load_steps=4 format=3 uid="uid://cwqxuvikseuo0"]
+[gd_resource type="Resource" script_class="CharacterDefinition" load_steps=7 format=3 uid="uid://cwqxuvikseuo0"]
 
 [ext_resource type="Script" uid="uid://6ggmllfwe30q" path="res://scripts/resource_definitions/character_stats.gd" id="1_pvioj"]
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="2_6l0ik"]
 [ext_resource type="Script" uid="uid://bl02pxal6hpix" path="res://scripts/resource_definitions/character_definition.gd" id="2_km83j"]
+[ext_resource type="Resource" uid="uid://bdllrpjgpmwht" path="res://resource/skill/fire/skill_fire_test.tres" id="3_c6g7a"]
+[ext_resource type="Resource" uid="uid://ciqtdibvwfcvs" path="res://resource/skill/ice/skill_ice_test.tres" id="4_iidoi"]
 
 [sub_resource type="Resource" id="Resource_u1mqb"]
 script = ExtResource("1_pvioj")
@@ -12,4 +15,5 @@ resource_name = "TestB"
 script = ExtResource("2_km83j")
 name = "TestB"
 base_stats = SubResource("Resource_u1mqb")
+innate_skills = Array[ExtResource("2_6l0ik")]([ExtResource("3_c6g7a"), ExtResource("4_iidoi")])
 metadata/_custom_type_script = "uid://bl02pxal6hpix"

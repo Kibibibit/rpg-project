@@ -24,3 +24,7 @@ func cannot_control() -> bool:
 ## TODO: Implement ways of modifiying this through gear and skills
 func get_initiative() -> int:
 	return stats.agility
+
+func get_skills() -> Array[Skill]:
+	## TODO: Implement level checks
+	return definition.innate_skills

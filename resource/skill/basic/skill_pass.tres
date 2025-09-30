@@ -6,4 +6,5 @@
 resource_name = "Pass"
 script = ExtResource("1_48e35")
 name = "Pass"
+target_group = 1
 metadata/_custom_type_script = "uid://c2hknhxilubrr"

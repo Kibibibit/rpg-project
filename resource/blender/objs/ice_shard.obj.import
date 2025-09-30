@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bf2uyfabli7s4"
+path="res://.godot/imported/ice_shard.obj-c185b0d1c43a09e3592e7416ea10dc8a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ice_shard.obj-c185b0d1c43a09e3592e7416ea10dc8a.mesh"]
+
+source_file="res://resource/blender/objs/ice_shard.obj"
+dest_files=["res://.godot/imported/ice_shard.obj-c185b0d1c43a09e3592e7416ea10dc8a.mesh", "res://.godot/imported/ice_shard.obj-c185b0d1c43a09e3592e7416ea10dc8a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

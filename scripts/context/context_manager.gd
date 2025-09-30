@@ -18,8 +18,11 @@ func create_context(p_context_type: Context.Type) -> void:
 	if context == null:
 		push_error("Failed to create context of type %s" % Context.type_to_name(p_context_type))
 		return
-	
+	print("Created context")
 	contexts[context.get_type()] = context
+
+func context_exists(p_context_type: Context.Type) -> bool:
+	return contexts.has(p_context_type)
 
 func destroy_context(p_context_type: Context.Type) -> void:
 	if not contexts.has(p_context_type):

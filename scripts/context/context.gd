@@ -3,11 +3,13 @@ extends RefCounted
 class_name Context
 
 enum Type {
-	BATTLE
+	BATTLE,
+	STATE
 }
 
 const _CONTEXT_NAME_MAP: Dictionary[Type, String] = {
-	Type.BATTLE: "BattleContext"
+	Type.BATTLE: "BattleContext",
+	Type.STATE: "StateContext"
 }
 
 static func type_to_name(p_context_type: Type) -> String:
