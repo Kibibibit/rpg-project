@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3ovtwuf8rr5d"]
+
+[ext_resource type="Script" uid="uid://jew66kycv1ax" path="res://scenes/battle_scene/battle_scene.gd" id="1_joy3q"]
+[ext_resource type="Script" uid="uid://dedrraegucrse" path="res://scripts/state_machine/state_statck_manager.gd" id="2_t2c54"]
+[ext_resource type="Script" uid="uid://d1l5tnyqhabig" path="res://scripts/state_machine/states/battle/battle/battle_state_run_battle.gd" id="3_qc2rq"]
+[ext_resource type="PackedScene" uid="uid://b4v4cso20hahm" path="res://scenes/battle_scene/ui/battle_scene_ui.tscn" id="4_t2c54"]
+[ext_resource type="PackedScene" uid="uid://b5i5b1xdxjbvc" path="res://scenes/battle_scene/backdrops/test_battle_backdrop.tscn" id="5_qc2rq"]
+
+[node name="BattleScene" type="Node"]
+script = ExtResource("1_joy3q")
+
+[node name="StateStackManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_t2c54")
+metadata/_custom_type_script = "uid://dedrraegucrse"
+
+[node name="BattleStateRunBattle" type="Node" parent="StateStackManager"]
+script = ExtResource("3_qc2rq")
+metadata/_custom_type_script = "uid://d1l5tnyqhabig"
+
+[node name="BattleSceneUI" parent="." instance=ExtResource("4_t2c54")]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="TestBattleBackdrop" parent="Node3D" instance=ExtResource("5_qc2rq")]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(0.9999905, -0.002716223, 0.0034147582, 0.0010795037, 0.9122902, 0.409543, -0.0042276606, -0.4095354, 0.91228443, 0.04680411, 4.340383, 9.055359)

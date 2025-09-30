@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bqfn4lwxeat4c"]
+
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_48e35"]
+
+[resource]
+resource_name = "Pass"
+script = ExtResource("1_48e35")
+name = "Pass"
+target_group = 1
+metadata/_custom_type_script = "uid://c2hknhxilubrr"

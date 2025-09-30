@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://ciqtdibvwfcvs"]
+
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_siid5"]
+
+[resource]
+resource_name = "Ice Skill"
+script = ExtResource("1_siid5")
+name = "Ice Skill"
+target_type = 1
+target_group = 4
+metadata/_custom_type_script = "uid://c2hknhxilubrr"

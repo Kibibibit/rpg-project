@@ -30,4 +30,4 @@ func _get_plugin_name():
 
 
 func _get_plugin_icon():
-	return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
+	return EditorInterface.get_editor_theme().get_icon("AnimationTrackList", "EditorIcons")
