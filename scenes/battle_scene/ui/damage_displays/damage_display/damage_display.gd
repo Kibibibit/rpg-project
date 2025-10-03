@@ -40,8 +40,6 @@ func _on_deal_hit(p_character_id: int, p_amount: int) -> void:
 	if p_character_id != character_id:
 		return
 	if not visible:
-		current_hp = float(context.get_character(character_id).hp)
-		max_hp = float(context.get_character(character_id).stats.max_hp)
 		progress_bar.value = current_hp/max_hp
 		
 	current_hp = max(current_hp - p_amount, 0)
