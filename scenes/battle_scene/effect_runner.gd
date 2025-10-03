@@ -52,7 +52,7 @@ func _display_spell_effects(p_damage_results: Array[SkillEffectResultDamage], p_
 		scene_3d.effect_parent.remove_child(c)
 		c.queue_free()
 
-func _on_hit_frame(p_result: SkillEffectResult) -> void:
+func _on_hit_frame(p_result: SkillEffectResult, p_index: int) -> void:
 	if p_result.get_type() == SkillEffectResult.Type.DAMAGE:
 		p_result = p_result as SkillEffectResultDamage
-		SignalBus.Battle.deal_hit.emit(p_result.target_id, p_result.hits[0].damage)
+		SignalBus.Battle.deal_hit.emit(p_result.target_id, p_result.hits[p_index].damage)
