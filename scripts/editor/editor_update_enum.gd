@@ -16,7 +16,16 @@ func _run():
 			code_edit.text = "\n".join(new_lines)
 
 func _validate(p_code: String) -> bool:
-	return "enum Type {" in p_code and "extends EnumBase" in p_code and "## ENUM FILE" in p_code
+	var has_type: bool = "enum Type {" in p_code
+	var extends_enum_base: bool = "extends EnumBase" in p_code
+	var has_tag: bool = p_code.begins_with("## ENUM FILE")
+	if not has_type:
+		push_warning("Cannot update enum -> Does not have enum Type")
+	if not extends_enum_base:
+		push_warning("Cannot update enum -> Does not extend EnumBase")
+	if not has_tag:
+		push_warning("Cannot update enum -> Does not begin with ## ENUM FILE")
+	return  has_type and extends_enum_base and has_tag
 
 func _create_new_lines(p_code: String) -> Array[String]:
 	var lines := p_code.split("\n", false)
@@ -38,6 +47,7 @@ func _create_new_lines(p_code: String) -> Array[String]:
 			values.append(line.strip_edges().replace(",",""))
 	
 	var out_lines: Array[String] = [
+		"## ENUM FILE",
 		"@abstract",
 		"extends EnumBase",
 		"class_name %s" % name,

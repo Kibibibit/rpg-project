@@ -1,0 +1,155 @@
+[gd_scene load_steps=17 format=3 uid="uid://qfcmw6inbx0i"]
+
+[ext_resource type="Script" uid="uid://dupoaqqa86r2w" path="res://scenes/battle_scene/spell_effects/spell_effect_node.gd" id="1_xt4mq"]
+[ext_resource type="Texture2D" uid="uid://dxdi0jcv6dcjb" path="res://resource/textures/particles/fire.png" id="2_n6qkl"]
+
+[sub_resource type="Animation" id="Animation_n6qkl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticleParent/GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParticleParent")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_xt4mq"]
+resource_name = "fire_spell_effect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticleParent/GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0127, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_emit_hit_frame"
+}]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParticleParent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, -5, 0.5, 1, 0, 0, 0, 1, 1, 0, 0, 5)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6qkl"]
+_data = {
+&"RESET": SubResource("Animation_n6qkl"),
+&"fire_spell_effect": SubResource("Animation_xt4mq")
+}
+
+[sub_resource type="Curve" id="Curve_80wxk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.17491749, 0.27874333), 0.0, 0.0, 0, 0, Vector2(0.7821782, 0.20053476), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_rcnbs"]
+curve = SubResource("Curve_80wxk")
+
+[sub_resource type="Gradient" id="Gradient_eb6x2"]
+offsets = PackedFloat32Array(0, 0.8736462)
+colors = PackedColorArray(1, 1, 1, 1, 0.2231029, 0.2231029, 0.22310287, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f480k"]
+gradient = SubResource("Gradient_eb6x2")
+
+[sub_resource type="Curve" id="Curve_vf0ll"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7169812, 12.35955), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_s05tw"]
+curve = SubResource("Curve_vf0ll")
+
+[sub_resource type="Curve" id="Curve_n6qkl"]
+_data = [Vector2(0.018867925, 0), 0.0, 0.0, 0, 0, Vector2(0.1980198, 0.122326255), 0.0, 0.0, 0, 0, Vector2(0.62046206, 0.27874333), 0.0, 0.0, 0, 0, Vector2(0.77227724, 1), 0.0, 0.0, 0, 0, Vector2(0.96039605, 1), 0.0, 0.0, 0, 0, Vector2(0.9966997, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_80wxk"]
+curve = SubResource("Curve_n6qkl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xt4mq"]
+particle_flag_damping_as_friction = true
+direction = Vector3(0, 1, 0)
+spread = 12.035
+initial_velocity_min = 1.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0.1, 0)
+damping_max = 0.1
+damping_curve = SubResource("CurveTexture_s05tw")
+scale_curve = SubResource("CurveTexture_80wxk")
+color = Color(1, 0.69803923, 0.40392157, 1)
+color_ramp = SubResource("GradientTexture1D_f480k")
+alpha_curve = SubResource("CurveTexture_rcnbs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80wxk"]
+transparency = 1
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_n6qkl")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rcnbs"]
+material = SubResource("StandardMaterial3D_80wxk")
+size = Vector2(0.15, 0.15)
+
+[node name="FireSpellEffect" type="Node3D" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_xt4mq")
+animation_player = NodePath("AnimationPlayer")
+animation = &"fire_spell_effect"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n6qkl")
+}
+
+[node name="ParticleParent" type="Node3D" parent="."]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ParticleParent"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+emitting = false
+amount = 1000
+lifetime = 0.3
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_xt4mq")
+draw_pass_1 = SubResource("QuadMesh_rcnbs")
+
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="ParticleParent/GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.6995826, 3.057974e-08)
+strength = 37.0
+radius = 0.65

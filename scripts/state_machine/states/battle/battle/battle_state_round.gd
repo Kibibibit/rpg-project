@@ -1,6 +1,9 @@
 extends BattleStateNode
 class_name BattleStateRound
 
+const NAME = "BattleStateRound"
+
+var round_started: bool = false
 
 func enter() -> void:
 	context.advance_round_number()
@@ -9,6 +12,11 @@ func enter() -> void:
 
 
 func step() -> void:
+	if not round_started:
+		round_started = true
+	else:
+		context.advance_to_next_turn()
+
 	if context.has_round_ended():
 		pop()
 	else:

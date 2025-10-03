@@ -10,14 +10,13 @@ var character_map: Dictionary[int, Character] = {}
 var battle_actors: Dictionary[int, BattleActor] = {}
 var team_map: Dictionary[int, Team.Type] = {}
 
-var battle_camera: Camera3D
-
 var round_number: int = 0
 
 var turn_order: Array[int] = []
 
 var current_skill: Skill = null
 var current_targets: Array[int] = []
+var skill_result: SkillResult = null
 
 func add_character(p_character: Character, p_team: Team.Type) -> void:
 	if character_map.has(p_character.id):
@@ -71,6 +70,7 @@ func sort_turn_order() -> void:
 func get_current_character_id() -> int:
 	if turn_order.is_empty():
 		push_error("get_current_character_id: Turn order is empty!")
+		print_stack()
 		return -1
 	return turn_order[0]
 

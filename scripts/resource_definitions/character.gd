@@ -6,6 +6,11 @@ var definition: CharacterDefinition
 
 var stats: CharacterStats
 
+
+## Battle Specific stats
+var defending: bool = false
+
+
 static func from_definition(p_definition: CharacterDefinition) -> Character:
 	var state := Character.new()
 	state.definition = p_definition
@@ -28,3 +33,10 @@ func get_initiative() -> int:
 func get_skills() -> Array[Skill]:
 	## TODO: Implement level checks
 	return definition.innate_skills
+
+func get_element_affinity(p_element: Element.Type) -> Affinity.Type:
+	## TODO: implement gear/spell effects
+	if p_element in definition.element_affinities:
+		return definition.element_affinities[p_element]
+	else:
+		return Affinity.NORMAL

@@ -1,11 +1,18 @@
-[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://dvyhqocau0x1v"]
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://dvyhqocau0x1v"]
 
 [ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_4kku1"]
+[ext_resource type="Script" uid="uid://drag0u3eq8pes" path="res://scripts/resource_definitions/skills/skill_effect.gd" id="1_xsn5k"]
+[ext_resource type="Script" uid="uid://chcyk3rmgv5l5" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_damage.gd" id="2_tcsqy"]
+
+[sub_resource type="Resource" id="Resource_wd45c"]
+script = ExtResource("2_tcsqy")
+power = 10
+metadata/_custom_type_script = "uid://chcyk3rmgv5l5"
 
 [resource]
 resource_name = "Attack"
 script = ExtResource("1_4kku1")
 name = "Attack"
-target_type = null
 target_group = 4
+effects = Array[ExtResource("1_xsn5k")]([SubResource("Resource_wd45c")])
 metadata/_custom_type_script = "uid://c2hknhxilubrr"

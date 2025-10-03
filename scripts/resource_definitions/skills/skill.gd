@@ -23,3 +23,15 @@ var name: String:
 var target_type: TargetType = TargetType.SINGLE
 @export_flags("Self", "Allies", "Enemies")
 var target_group: int = 0
+
+@export
+var effects: Array[SkillEffect] = []
+@export
+var spell_effect: PackedScene
+
+## TODO: Find a better way to load this
+## TODO: Chose a better name
+func get_spell_effect() -> SpellEffectNode:
+	if not spell_effect:
+		return preload("uid://qfcmw6inbx0i").instantiate() as SpellEffectNode
+	return spell_effect.instantiate() as SpellEffectNode

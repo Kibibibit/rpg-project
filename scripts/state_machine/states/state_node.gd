@@ -2,10 +2,12 @@
 extends Node
 class_name StateNode
 
-@warning_ignore("unused_signal")
+
+
+
 signal push_state(s_new_state: StateNode)
-@warning_ignore("unused_signal")
 signal pop_state()
+signal pop_state_until(p_name: String)
 
 func _ready() -> void:
 	name = get_script().get_global_name()
@@ -30,3 +32,6 @@ func push(p_new_state: StateNode) -> void:
 
 func pop() -> void:
 	pop_state.emit()
+
+func pop_until(p_name: String) -> void:
+	pop_state_until.emit(p_name)

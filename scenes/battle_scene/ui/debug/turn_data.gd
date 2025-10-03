@@ -8,7 +8,8 @@ func _process(_delta: float) -> void:
 			text = "Battle context missing!"
 			return
 		var lines: Array[String] = ["Current Turn Data:"]
-		
+		if context.has_round_ended():
+			return
 		var current_character := context.get_current_character()
 		if current_character:
 			lines.append("Character: %s" % current_character.definition.name)
@@ -21,8 +22,6 @@ func _process(_delta: float) -> void:
 			lines.append("Targets:")
 			for target_id in current_targets:
 				lines.append("-%s" % context.get_character(target_id).definition.name)
-		
-		## TODO: Targeting
 		
 		text = "\n".join(lines)
 	

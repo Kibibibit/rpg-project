@@ -19,3 +19,6 @@ var innate_skills: Array[Skill] = []
 
 @export
 var skills: Dictionary[int, Skill] = {}
+
+@export
+var element_affinities: Dictionary[Element.Type, Affinity.Type] = {}

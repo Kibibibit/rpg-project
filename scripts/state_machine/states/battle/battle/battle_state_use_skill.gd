@@ -9,9 +9,21 @@ func enter() -> void:
 	character_id = context.get_current_character_id()
 	round_number = context.round_number
 	skill = context.current_skill
+	context.skill_result = null
 		
 
-func activate() -> void:
-	if context.get_current_character_id() != character_id or context.round_number != round_number:
-		pop()
-		return
+
+func step() -> void:
+	var result: SkillResult = SkillResult.new()
+	result.skill = context.current_skill
+	## TODO: random skills
+	for target in context.current_targets:
+		for effect in skill.effects:
+			result.effect_results.append_array(
+				effect.apply(
+					context.get_current_character(),
+					context.get_character(target)
+				)
+			)
+	context.skill_result = result
+	push(BattleStateDoEffect.new())

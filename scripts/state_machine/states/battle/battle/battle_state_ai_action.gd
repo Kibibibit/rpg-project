@@ -1,2 +1,2 @@
 extends BattleStateNode
-class_name battleStateAIAction
+class_name BattleStateAIAction

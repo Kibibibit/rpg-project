@@ -31,3 +31,7 @@ signal hide_target_menu()
 signal target_characters(s_character_ids: Array[int])
 
 signal targets_selected(s_character_ids: Array[int])
+
+signal display_skill_result(s_skill_result)
+
+signal skill_result_finished()

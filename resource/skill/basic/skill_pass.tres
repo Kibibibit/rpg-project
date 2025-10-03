@@ -1,10 +1,17 @@
-[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bqfn4lwxeat4c"]
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://bqfn4lwxeat4c"]
 
+[ext_resource type="Script" uid="uid://drag0u3eq8pes" path="res://scripts/resource_definitions/skills/skill_effect.gd" id="1_5bw13"]
 [ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_48e35"]
+[ext_resource type="Script" uid="uid://d2h7nhvt3jfop" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_pass.gd" id="2_iplnj"]
+
+[sub_resource type="Resource" id="Resource_htg6g"]
+script = ExtResource("2_iplnj")
+metadata/_custom_type_script = "uid://d2h7nhvt3jfop"
 
 [resource]
 resource_name = "Pass"
 script = ExtResource("1_48e35")
 name = "Pass"
 target_group = 1
+effects = Array[ExtResource("1_5bw13")]([SubResource("Resource_htg6g")])
 metadata/_custom_type_script = "uid://c2hknhxilubrr"
