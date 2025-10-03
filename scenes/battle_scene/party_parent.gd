@@ -22,3 +22,4 @@ func _spawn_actor(p_character_id: int, p_team: Team.Type) -> void:
 	
 	actor.position.x = 4 - (2*len(_characters))
 	add_child(actor)
+	SignalBus.Battle.add_damage_display.emit(p_character_id)

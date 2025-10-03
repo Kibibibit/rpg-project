@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4v4cso20hahm"]
+[gd_scene load_steps=8 format=3 uid="uid://b4v4cso20hahm"]
 
 [ext_resource type="Script" uid="uid://bpiax5lk16nqw" path="res://scenes/battle_scene/ui/battle_scene_ui.gd" id="1_t033n"]
 [ext_resource type="PackedScene" uid="uid://dfsqxf63ab2vn" path="res://scenes/battle_scene/ui/action_select/action_select.tscn" id="2_t033n"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cq8qc817kqqf0" path="res://scenes/battle_scene/ui/debug/debug_ui.tscn" id="4_awwjf"]
 [ext_resource type="PackedScene" uid="uid://csxqh5fw5xrjf" path="res://scenes/battle_scene/ui/target_select/target_select.tscn" id="4_t033n"]
 [ext_resource type="Script" uid="uid://hqh3h464osmt" path="res://scenes/battle_scene/ui/target_cursor/target_cursor_parent.gd" id="6_biccq"]
+[ext_resource type="Script" uid="uid://1u8rpvf2rqo8" path="res://scenes/battle_scene/ui/damage_displays/damage_number_parent.gd" id="7_vwrfg"]
 
 [node name="BattleSceneUI" type="Control"]
 layout_mode = 3
@@ -71,3 +72,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_biccq")
 metadata/_custom_type_script = "uid://hqh3h464osmt"
+
+[node name="DamageNumberParent" type="Control" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_vwrfg")

@@ -6,6 +6,8 @@ signal started()
 
 signal spawn_actor(s_character_id: int, s_team: Team.Type)
 
+signal add_damage_display(s_character_id: int)
+
 signal round_started(s_round_number: int)
 
 signal turn_started(s_character_id: int)
@@ -35,3 +37,5 @@ signal targets_selected(s_character_ids: Array[int])
 signal display_skill_result(s_skill_result)
 
 signal skill_result_finished()
+
+signal deal_hit(s_character_id: int, s_amount: int)

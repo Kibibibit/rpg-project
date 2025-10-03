@@ -33,6 +33,7 @@ func _display_spell_effects(p_damage_results: Array[SkillEffectResultDamage], p_
 		effect_node_signals.append(effect_node.complete)
 		effect_nodes.append(effect_node)
 		scene_3d.effect_parent.add_child(effect_node)
+		effect_node.hit_frame_reached.connect(_on_hit_frame)
 		
 		var target := context.battle_actors[result.target_id]
 		var caster := context.battle_actors[result.caster_id]
@@ -50,3 +51,8 @@ func _display_spell_effects(p_damage_results: Array[SkillEffectResultDamage], p_
 		var c := scene_3d.effect_parent.get_child(0)
 		scene_3d.effect_parent.remove_child(c)
 		c.queue_free()
+
+func _on_hit_frame(p_result: SkillEffectResult) -> void:
+	if p_result.get_type() == SkillEffectResult.Type.DAMAGE:
+		p_result = p_result as SkillEffectResultDamage
+		SignalBus.Battle.deal_hit.emit(p_result.target_id, p_result.hits[0].damage)

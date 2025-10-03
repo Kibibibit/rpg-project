@@ -8,7 +8,8 @@ signal complete
 var animation_player: AnimationPlayer
 @export
 var animation: StringName
-
+@export
+var hit_frames: int = 1
 
 
 var delay: float = 0.0

@@ -8,6 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_gtydn"]
 script = ExtResource("1_su860")
+max_hp = 100
+max_mp = 100
 agility = 3
 
 [resource]

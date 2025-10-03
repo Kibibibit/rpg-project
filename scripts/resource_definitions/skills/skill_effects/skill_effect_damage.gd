@@ -97,6 +97,8 @@ func _apply_hit(
 		element
 	)
 	
+	p_target.hp = maxi(p_target.hp - damage, 0)
+	
 	return DamageResult.new(
 		damage,p_is_crit
 	)

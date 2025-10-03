@@ -8,6 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_u1mqb"]
 script = ExtResource("1_pvioj")
+max_hp = 100
+max_mp = 100
 agility = 2
 
 [resource]

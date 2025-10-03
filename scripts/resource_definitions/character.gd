@@ -10,11 +10,16 @@ var stats: CharacterStats
 ## Battle Specific stats
 var defending: bool = false
 
+var hp: int
+var mp: int
+
 
 static func from_definition(p_definition: CharacterDefinition) -> Character:
 	var state := Character.new()
 	state.definition = p_definition
 	state.stats = p_definition.base_stats.duplicate()
+	state.hp = state.stats.max_hp
+	state.mp = state.stats.max_mp
 	return state
 
 ## This is true if the character has some kind of ailment that 
