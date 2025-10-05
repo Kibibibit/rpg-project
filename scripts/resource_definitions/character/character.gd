@@ -13,6 +13,8 @@ var defending: bool = false
 var hp: int
 var mp: int
 
+var buff_modifiers: BuffModifiers = BuffModifiers.new()
+
 
 static func from_definition(p_definition: CharacterDefinition) -> Character:
 	var state := Character.new()

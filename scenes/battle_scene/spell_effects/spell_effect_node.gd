@@ -1,7 +1,7 @@
 extends Node3D
 class_name SpellEffectNode
 
-signal hit_frame_reached(s_result: SkillEffectResult, s_index: int)
+signal hit_frame_reached(s_result: SkillEffectResult)
 signal complete
 
 @export
@@ -11,7 +11,6 @@ var animation: StringName
 @export
 var hit_frames: int = 1
 
-var index: int = 0
 
 var delay: float = 0.0
 var result: SkillEffectResult
@@ -39,5 +38,4 @@ func play(p_start_position: Vector3, p_end_position: Vector3, p_result: SkillEff
 	complete.emit()
 
 func _emit_hit_frame() -> void:
-	hit_frame_reached.emit(result, index)
-	index += 1
+	hit_frame_reached.emit(result)
