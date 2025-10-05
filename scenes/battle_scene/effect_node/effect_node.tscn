@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://blc3guhdg8g0i"]
-
-[ext_resource type="PackedScene" uid="uid://dhn5nfyjvxnk4" path="res://resource/blender/spells/explosion.blend" id="1_0212r"]
-[ext_resource type="Script" uid="uid://biplsjvdxr1j" path="res://scenes/battle_scene/effect_node/effect_node.gd" id="1_kv3tn"]
-
-[node name="EffectNode" type="Node3D"]
-script = ExtResource("1_kv3tn")
-
-[node name="explosion" parent="." instance=ExtResource("1_0212r")]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgkk16pwss3vn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yiw2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_lyuxo"]
+sky_material = SubResource("ProceduralSkyMaterial_7yiw2")
+
+[sub_resource type="Environment" id="Environment_gw6kk"]
+background_mode = 2
+sky = SubResource("Sky_lyuxo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7yiw2"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyuxo"]
+albedo_texture = SubResource("PlaceholderTexture2D_7yiw2")
+uv1_scale = Vector3(6.21, 6.21, 6.21)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7yiw2"]
+material = SubResource("StandardMaterial3D_lyuxo")
+top_radius = 100.0
+bottom_radius = 100.0
+height = 1.0
+
+[node name="TestBackdrop" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gw6kk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CylinderMesh_7yiw2")

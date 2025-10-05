@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://bf22tt86su70g"]
 
-[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="1_0iuwk"]
-[ext_resource type="Script" uid="uid://drag0u3eq8pes" path="res://scripts/resource_definitions/skills/skill_effect.gd" id="1_mmfpx"]
-[ext_resource type="Script" uid="uid://p5r0304kh0lh" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_defend.gd" id="2_keqmp"]
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://src/scripts/resource_definitions/skills/skill.gd" id="1_0iuwk"]
+[ext_resource type="Script" uid="uid://drag0u3eq8pes" path="res://src/scripts/resource_definitions/skills/skill_effect.gd" id="1_mmfpx"]
+[ext_resource type="Script" path="res://scripts/resource_definitions/skills/skill_effects/skill_effect_defend.gd" id="2_keqmp"]
 
 [sub_resource type="Resource" id="Resource_o657m"]
 script = ExtResource("2_keqmp")

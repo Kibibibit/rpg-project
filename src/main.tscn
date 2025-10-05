@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://gj7iuhfvgcfs"]
+
+[ext_resource type="PackedScene" uid="uid://c3ovtwuf8rr5d" path="res://src/battle/battle_manager.tscn" id="1_eewff"]
+[ext_resource type="PackedScene" uid="uid://t3waglotnnu4" path="res://src/debug/debug.tscn" id="2_gh0ne"]
+
+[node name="Main" type="Node"]
+
+[node name="BattleManager" parent="." instance=ExtResource("1_eewff")]
+
+[node name="Debug" parent="." instance=ExtResource("2_gh0ne")]

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="CharacterDefinition" load_steps=7 format=3 uid="uid://bwgtemof3tvb2"]
 
-[ext_resource type="Script" uid="uid://6ggmllfwe30q" path="res://scripts/resource_definitions/character/character_stats.gd" id="1_kcucf"]
-[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://scripts/resource_definitions/skills/skill.gd" id="3_u1mqb"]
+[ext_resource type="Script" uid="uid://6ggmllfwe30q" path="res://src/scripts/resource_definitions/character/character_stats.gd" id="1_kcucf"]
+[ext_resource type="Script" uid="uid://c2hknhxilubrr" path="res://src/scripts/resource_definitions/skills/skill.gd" id="3_u1mqb"]
 [ext_resource type="Resource" uid="uid://ciqtdibvwfcvs" path="res://resource/skill/ice/skill_ice_test.tres" id="4_fbr0f"]
 [ext_resource type="Resource" uid="uid://bdllrpjgpmwht" path="res://resource/skill/fire/skill_fire_test.tres" id="4_kcucf"]
-[ext_resource type="Script" uid="uid://bl02pxal6hpix" path="res://scripts/resource_definitions/character/character_definition.gd" id="5_fbr0f"]
+[ext_resource type="Script" uid="uid://bl02pxal6hpix" path="res://src/scripts/resource_definitions/character/character_definition.gd" id="5_fbr0f"]
 
 [sub_resource type="Resource" id="Resource_u1mqb"]
 script = ExtResource("1_kcucf")

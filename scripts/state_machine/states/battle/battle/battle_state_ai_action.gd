@@ -1,2 +1,0 @@
-extends BattleStateNode
-class_name BattleStateAIAction

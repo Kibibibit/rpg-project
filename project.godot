@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="rpg-project"
-run/main_scene="uid://c3ovtwuf8rr5d"
+run/main_scene="uid://gj7iuhfvgcfs"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SignalBus="*res://scripts/autoloads/signal_bus/signal_bus.gd"
-ContextManager="*res://scripts/context/context_manager.gd"
+GlobalEvents="*res://src/common/global_events.gd"
+BattleEvents="*res://src/battle/battle_events.gd"
 
 [editor_plugins]
 
@@ -27,7 +27,7 @@ enabled=PackedStringArray("res://addons/todo_finder/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://scripts/resource_definitions/": "blue"
+"res://src/scripts/resource_definitions/": "blue"
 }
 
 [input]
