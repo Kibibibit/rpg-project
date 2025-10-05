@@ -8,6 +8,7 @@ signal turn_order_changed()
 # Character data
 var character_map: Dictionary[int, Character] = {}
 var battle_actors: Dictionary[int, BattleActor] = {}
+var party_parents: Dictionary[Team.Type, PartyParent] = {}
 var team_map: Dictionary[int, Team.Type] = {}
 
 var round_number: int = 0

@@ -7,20 +7,21 @@ static func create() -> TargetCursor:
 	var instance := _PACKED_SCENE.instantiate() as TargetCursor
 	return instance
 
-var tween: Tween = null
 var target: int = -1
 
-func target_character(p_character_id: int) -> void:
+func get_char_position(p_character_id: int) -> Vector2:
 	var battle_context: BattleContext = ContextManager.get_context(Context.Type.BATTLE) as BattleContext
-	var battle_actor: BattleActor = battle_context.battle_actors[p_character_id]
 	var viewport: Viewport = get_viewport()
-	var screen_position: Vector2 = viewport.get_camera_3d().unproject_position(battle_actor.get_center_of_mass_global_position())
-	if target != -1:
-		if tween:
-			tween.kill()
-		tween = create_tween()
-		tween.tween_property(self, "position", screen_position, 0.1)
-		tween.play()
-	else:
-		position = screen_position
+	var battle_actor: BattleActor = battle_context.battle_actors[p_character_id]
+	var pos := battle_actor.get_center_of_mass_global_position()
+	return viewport.get_camera_3d().unproject_position(pos)
+
+func target_character(p_character_id: int) -> void:
 	target = p_character_id
+	self.position = get_char_position(target)
+	
+
+func _process(_delta: float) -> void:
+	if target == -1:
+		return
+	self.position = get_char_position(target)

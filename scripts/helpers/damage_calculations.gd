@@ -18,6 +18,9 @@ const _DEFENSE_MULTIPLIER := 0.01
 const _CRIT_POWER_MULTIPLIER := 1.5
 const _DEFEND_POWER_MULTIPLIER := 0.5
 
+
+const _RANGE: float = 0.05
+
 static func calculate_damage(
 	p_caster: Character,
 	p_target: Character,
@@ -34,6 +37,8 @@ static func calculate_damage(
 
 	var damage: float = float(p_base_power) * (1.0+(float(base_stat) * _BASE_STAT_MULTIPLIER))
 	damage *= (1.0-float(target_defense) * _DEFENSE_MULTIPLIER)
+	
+	damage *= 1.0 + randf_range(-_RANGE, _RANGE)
 
 	var affinity := p_target.get_element_affinity(p_element)
 	var affinity_multiplier := _AFFINITY_MULTIPLIERS[affinity]

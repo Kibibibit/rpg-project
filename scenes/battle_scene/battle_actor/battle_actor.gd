@@ -22,14 +22,8 @@ func _ready() -> void:
 	if not skin:
 		push_error("No skin found in BattleActor for character id %d" % character_id)
 		return
-	
-	SignalBus.Battle.turn_started.connect(_on_turn_started)
 
-func _on_turn_started(p_character_id: int) -> void:
-	if character_id != p_character_id:
-		skin_parent.position.y = 0
-		return
-	skin_parent.position.y = 0.5
+
 	
 func get_center_of_mass_global_position() -> Vector3:
 	return skin.center_of_mass.global_position

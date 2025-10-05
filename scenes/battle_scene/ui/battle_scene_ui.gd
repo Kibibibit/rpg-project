@@ -1,5 +1,7 @@
 extends Control
+class_name BattleSceneUI
 
+@onready var damage_number_parent: DamageNumberParent = %DamageNumberParent
 
 
 func _input(event: InputEvent) -> void:

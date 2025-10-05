@@ -3,7 +3,7 @@ class_name PartyParent
 
 @export
 var team: Team.Type
-
+var context: BattleContext
 var _characters: Dictionary[int, BattleActor] = {}
 
 func _ready() -> void:
@@ -11,6 +11,8 @@ func _ready() -> void:
 		var child := get_child(0)
 		remove_child(child)
 		child.queue_free()
+	context = ContextManager.get_context(Context.Type.BATTLE) as BattleContext
+	context.party_parents[self.team] = self
 	SignalBus.Battle.spawn_actor.connect(_spawn_actor)
 
 

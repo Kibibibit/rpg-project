@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq8dic2rhqucv"]
+[gd_scene load_steps=5 format=3 uid="uid://bq8dic2rhqucv"]
 
 [ext_resource type="Script" uid="uid://c50v2l6eiykq2" path="res://scenes/battle_scene/3d/battle_scene_3d.gd" id="1_7gfnb"]
 [ext_resource type="PackedScene" uid="uid://b5i5b1xdxjbvc" path="res://scenes/battle_scene/backdrops/test_battle_backdrop.tscn" id="1_yt5b0"]
 [ext_resource type="Script" uid="uid://c0hvua8eeo0x8" path="res://scenes/battle_scene/3d/effect_parent.gd" id="2_uumys"]
+[ext_resource type="PackedScene" uid="uid://b2mqihc7lwupc" path="res://scenes/battle_scene/3d/battle_camera/battle_camera.tscn" id="4_fxp42"]
 
 [node name="BattleScene3D" type="Node3D"]
 script = ExtResource("1_7gfnb")
 
 [node name="TestBattleBackdrop" parent="." instance=ExtResource("1_yt5b0")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.9999905, -0.002716223, 0.0034147582, 0.0010795037, 0.9122902, 0.409543, -0.0042276606, -0.4095354, 0.91228443, 0.04680411, 4.340383, 9.055359)
-
 [node name="EffectParent" type="Node3D" parent="."]
 script = ExtResource("2_uumys")
+
+[node name="BattleCamera" parent="." instance=ExtResource("4_fxp42")]

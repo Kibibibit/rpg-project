@@ -20,6 +20,7 @@ script = ExtResource("3_qc2rq")
 metadata/_custom_type_script = "uid://d1l5tnyqhabig"
 
 [node name="BattleSceneUI" parent="." instance=ExtResource("4_t2c54")]
+unique_name_in_owner = true
 
 [node name="3D" parent="." instance=ExtResource("5_qc2rq")]
 unique_name_in_owner = true

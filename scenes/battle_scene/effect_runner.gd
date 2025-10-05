@@ -2,6 +2,8 @@ extends Node
 class_name EffectRunner
 
 @onready var scene_3d: BattleScene3D = %"3D"
+@onready var battle_scene_ui: BattleSceneUI = %BattleSceneUI
+
 var context: BattleContext
 
 func _ready() -> void:
@@ -46,15 +48,17 @@ func _display_spell_effects(p_damage_results: Array[SkillEffectResultDamage], p_
 			result
 		)
 	await SignalGroup.all(effect_node_signals)
+	await battle_scene_ui.damage_number_parent.all_done
 	
 	while scene_3d.effect_parent.get_child_count() > 0:
 		var c := scene_3d.effect_parent.get_child(0)
 		scene_3d.effect_parent.remove_child(c)
 		c.queue_free()
+	
 
 func _on_hit_frame(p_result: SkillEffectResult) -> void:
 	if p_result.get_type() == SkillEffectResult.Type.DAMAGE:
 		p_result = p_result as SkillEffectResultDamage
 		for hit in p_result.hits:
 			SignalBus.Battle.deal_hit.emit(p_result.target_id, hit.damage)
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(0.2).timeout
