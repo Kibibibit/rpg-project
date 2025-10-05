@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dupoaqqa86r2w" path="res://scenes/battle_scene/spell_effects/spell_effect_node.gd" id="1_br34u"]
 
+[sub_resource type="Animation" id="Animation_r4h6y"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CasterParent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -5)
+
 [sub_resource type="Animation" id="Animation_br34u"]
 resource_name = "basic_attack_spell_effect"
 tracks/0/type = "position_3d"
@@ -32,16 +42,6 @@ tracks/2/keys = {
 "method": &"_emit_hit_frame"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_r4h6y"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CasterParent")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r4h6y"]
 _data = {

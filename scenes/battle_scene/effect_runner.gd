@@ -25,7 +25,9 @@ func _display_skill_result(p_result: SkillResult) -> void:
 	SignalBus.Battle.skill_result_finished.emit()
 
 func _display_spell_effects(p_damage_results: Array[SkillEffectResultDamage], p_skill: Skill) -> void:
-	## TODO: Do something with hit frame reached. Maybe make it a signal bus thing
+	if p_damage_results.is_empty():
+		return
+	## TODO: Make this not specific to damage effects
 	var effect_nodes: Array[SpellEffectNode] = []
 	var effect_node_signals: Array[Signal] = []
 	for result in p_damage_results:

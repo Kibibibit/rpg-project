@@ -13,5 +13,6 @@ func apply(p_caster: Character, p_target: Character) -> Array[SkillEffectResult]
 	var result := SkillEffectResultDefend.new()
 	result.caster_id = p_caster.id
 	result.target_id = p_target.id
+	p_target.defending = true
 	return [result]
 	

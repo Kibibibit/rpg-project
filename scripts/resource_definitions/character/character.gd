@@ -47,3 +47,6 @@ func get_element_affinity(p_element: Element.Type) -> Affinity.Type:
 		return definition.element_affinities[p_element]
 	else:
 		return Affinity.NORMAL
+
+func start_turn() -> void:
+	defending = false

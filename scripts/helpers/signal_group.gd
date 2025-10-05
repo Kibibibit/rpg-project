@@ -34,6 +34,8 @@ func _on_signal_received(...args: Array) -> void:
 		signals.clear()
 
 static func all(p_signals: Array[Signal]) -> void:
+	if p_signals.is_empty():
+		return
 	var group: SignalGroup = SignalGroup.new(Mode.ALL, p_signals)
 	await group.completed
 
