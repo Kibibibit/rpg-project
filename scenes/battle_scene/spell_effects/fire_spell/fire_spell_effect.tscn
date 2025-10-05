@@ -151,7 +151,7 @@ gradient = SubResource("Gradient_vf0ll")
 
 [sub_resource type="Curve" id="Curve_rcnbs"]
 _limits = [0.0, 35.695183, 0.0, 1.0]
-_data = [Vector2(0, 12.23262), 0.0, 0.0, 0, 0, Vector2(0.69966996, 21.736837), 0.0, 0.0, 0, 0, Vector2(1, 11.500719), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.35973597, 13.203573), 0.0, 0.0, 0, 0, Vector2(1, 8.468498), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_eb6x2"]
