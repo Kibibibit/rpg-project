@@ -47,8 +47,10 @@ func _display_spell_effects(p_damage_results: Array[SkillEffectResultDamage], p_
 			target.get_center_of_mass_global_position(),
 			result
 		)
+		
+	effect_node_signals.append(battle_scene_ui.damage_number_parent.all_done)
+	
 	await SignalGroup.all(effect_node_signals)
-	await battle_scene_ui.damage_number_parent.all_done
 	
 	while scene_3d.effect_parent.get_child_count() > 0:
 		var c := scene_3d.effect_parent.get_child(0)
