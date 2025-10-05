@@ -67,4 +67,3 @@ func _process(delta: float) -> void:
 	else:
 		self.global_position = self.global_position.move_toward(self.target_position, delta*10.0)
 		self.global_rotation = self.global_rotation.slerp(self.target_rotation, delta*PI*2.0)
-	
