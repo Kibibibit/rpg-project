@@ -33,5 +33,5 @@ var spell_effect: PackedScene
 ## TODO: Chose a better name
 func get_spell_effect() -> SpellEffectNode:
 	if not spell_effect:
-		return preload("uid://qfcmw6inbx0i").instantiate() as SpellEffectNode
+		return preload("uid://m7ynnjm67eot").instantiate() as SpellEffectNode
 	return spell_effect.instantiate() as SpellEffectNode

@@ -14,6 +14,7 @@ var skin: CharacterSkin
 
 var context: BattleContext
 var character_id: int
+var skin_transform: Transform3D
 
 func _ready() -> void:
 	context = ContextManager.get_context(Context.Type.BATTLE) as BattleContext
@@ -22,7 +23,10 @@ func _ready() -> void:
 	if not skin:
 		push_error("No skin found in BattleActor for character id %d" % character_id)
 		return
+	skin_transform = skin.global_transform
 
+func reset_skin() -> void:
+	skin.global_transform = skin_transform
 
 	
 func get_center_of_mass_global_position() -> Vector3:
