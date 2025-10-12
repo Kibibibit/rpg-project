@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://t3waglotnnu4"]
+[gd_scene load_steps=4 format=3 uid="uid://t3waglotnnu4"]
 
 [ext_resource type="Script" uid="uid://cmqcalqiqmvgg" path="res://src/debug/debug.gd" id="1_eudbk"]
+[ext_resource type="Script" uid="uid://cupt6prvodgd6" path="res://src/debug/buttons/test_battle_button.gd" id="2_vhhyp"]
+[ext_resource type="Script" uid="uid://cg56v85kjl4oj" path="res://src/debug/buttons/test_select_button.gd" id="3_cogwb"]
 
 [node name="Debug" type="CanvasLayer"]
+layer = 10000000
 script = ExtResource("1_eudbk")
 
 [node name="Control" type="Control" parent="."]
@@ -26,3 +29,9 @@ columns = 10
 [node name="TestBattleButton" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
 text = "Test Battle"
+script = ExtResource("2_vhhyp")
+
+[node name="TestSelectButton" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+text = "Test Select Button"
+script = ExtResource("3_cogwb")

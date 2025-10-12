@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://ddlq5sgm3okit"]
+
+[ext_resource type="Script" uid="uid://bbdakcxjhi7q3" path="res://src/resource_definitions/skill/skill.gd" id="1_8e4qs"]
+
+[resource]
+resource_name = "SkillFireSmall"
+script = ExtResource("1_8e4qs")
+skill_name = "Fire"
+metadata/_custom_type_script = "uid://bbdakcxjhi7q3"

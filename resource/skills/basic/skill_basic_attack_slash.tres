@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://dysameacfy8po"]
+
+[ext_resource type="Script" uid="uid://bbdakcxjhi7q3" path="res://src/resource_definitions/skill/skill.gd" id="1_57wgb"]
+
+[resource]
+resource_name = "BasicAttackSlash"
+script = ExtResource("1_57wgb")
+skill_name = "Attack"
+weapon_skill = true
+metadata/_custom_type_script = "uid://bbdakcxjhi7q3"

@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ipsv8o62xggg"]
+
+[ext_resource type="Script" uid="uid://cbacp5nsghbf5" path="res://src/battle/battle_scene.gd" id="1_mswv1"]
+[ext_resource type="Script" uid="uid://cwsiiyk84ekjb" path="res://src/battle/turn_order_manager.gd" id="2_6cbqe"]
+[ext_resource type="PackedScene" uid="uid://cgkk16pwss3vn" path="res://backdrops/test_backdrop.tscn" id="2_sft4c"]
+[ext_resource type="PackedScene" uid="uid://drylx2maxpbvq" path="res://resource/blender/test_skin.blend" id="3_u5n4n"]
+[ext_resource type="Script" uid="uid://brbvqijhvr82n" path="res://src/battle/battle_actor_parent.gd" id="4_jdlxq"]
+[ext_resource type="PackedScene" uid="uid://cwn31dxbgsjld" path="res://src/battle/ui/battle_ui.tscn" id="6_r6mhw"]
+[ext_resource type="Script" uid="uid://dquw1jqifa263" path="res://src/battle/battle_ai_manager.gd" id="7_mutde"]
+
+[node name="BattleScene" type="Node3D"]
+script = ExtResource("1_mswv1")
+
+[node name="TurnOrderManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_6cbqe")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9999619, 0.004942768, -0.0071917637, 0, 0.8241259, 0.5664067, 0.008726535, -0.5663851, 0.82409453, -0.10137868, 5.017029, 8.782002)
+
+[node name="BackdropParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="TestBackdrop" parent="BackdropParent" instance=ExtResource("2_sft4c")]
+
+[node name="BattleActorParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_jdlxq")
+
+[node name="EnemyParent" type="Marker3D" parent="BattleActorParent"]
+unique_name_in_owner = true
+transform = Transform3D(0.08873778, 0, -0.9960551, 0, 1, 0, 0.9960551, 0, 0.08873778, 4.602658, 9.536743e-07, -1.3901913)
+gizmo_extents = 4.33
+
+[node name="test_skin" parent="BattleActorParent/EnemyParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="test_skin2" parent="BattleActorParent/EnemyParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="test_skin3" parent="BattleActorParent/EnemyParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="test_skin4" parent="BattleActorParent/EnemyParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="PlayerParent" type="Marker3D" parent="BattleActorParent"]
+unique_name_in_owner = true
+transform = Transform3D(0.12748009, 0, 0.99184126, 0, 1, 0, -0.99184126, 0, 0.12748009, -3.9804165, 4.7683716e-07, -1.7022383)
+gizmo_extents = 4.33
+
+[node name="test_skin" parent="BattleActorParent/PlayerParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="test_skin2" parent="BattleActorParent/PlayerParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="test_skin3" parent="BattleActorParent/PlayerParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="test_skin4" parent="BattleActorParent/PlayerParent" instance=ExtResource("3_u5n4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="BattleUI" parent="." instance=ExtResource("6_r6mhw")]
+
+[node name="BattleAIManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_mutde")
+metadata/_custom_type_script = "uid://dquw1jqifa263"

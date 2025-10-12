@@ -17,18 +17,20 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEvents="*res://src/common/global_events.gd"
-BattleEvents="*res://src/battle/battle_events.gd"
+UIDLookup="*res://src/autoloads/uid_lookup.gd"
+GlobalEvents="*res://src/autoloads/events/global_events.gd"
+BattleEventBus="*res://src/autoloads/battle/battle_event_bus.gd"
+Transition="*res://src/autoloads/transition/transition.gd"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/todo_finder/plugin.cfg")
 
-[file_customization]
+[global_group]
 
-folder_colors={
-"res://src/scripts/resource_definitions/": "blue"
-}
+BattleActors=""
+PlayerActors=""
+EnemyActors=""
 
 [input]
 

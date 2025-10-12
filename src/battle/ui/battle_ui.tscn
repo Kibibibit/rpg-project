@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwn31dxbgsjld"]
+
+[ext_resource type="Script" uid="uid://36fhy52mdcye" path="res://src/battle/ui/battle_ui_root.gd" id="1_3wkc1"]
+[ext_resource type="Script" uid="uid://c3bst8qk0styo" path="res://src/state_machine/control/control_state_stack_manager.gd" id="2_says2"]
+
+[node name="BattleUI" type="CanvasLayer"]
+
+[node name="BattleUIRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3wkc1")
+
+[node name="PlayerActionStateStack" type="Control" parent="BattleUIRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_says2")
+metadata/_custom_type_script = "uid://c3bst8qk0styo"

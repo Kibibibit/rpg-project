@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://b6knyiu1ge8yr"]
+
+[ext_resource type="Script" uid="uid://b7o4mqxdl06yx" path="res://src/resource_definitions/items/weapon.gd" id="1_nhi6g"]
+
+[resource]
+resource_name = "WeaponTestSword"
+script = ExtResource("1_nhi6g")
+attack_skill_id = &"skill/basic/attack-slash"
+power = 5
+item_name = "Test Sword"
+metadata/_custom_type_script = "uid://b7o4mqxdl06yx"

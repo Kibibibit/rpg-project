@@ -1,8 +1,3 @@
-Lets try a state stack now.
-States are objects, that then push new states to the queue
-
-
-
 Battle System:
 	- On round start, each combatant is placed in order based on intiative (currently speed)
 	- if a character hits an enemy weakness, or lands a critical hit, the target is knocked down. Characters
@@ -15,3 +10,9 @@ Battle System:
 		- Failing to score a knockdown will break the chain, or if an aoe attack hits an enemy resistance/reflect/absorb
 		- You cannot chain to someone who has already had their turn (Chaining doesn't give an extra turn,
 		it just makes a charater have their turn sooner)
+
+
+
+Logic:
+	Battle is started, with the scene passed each character
+	Actors created

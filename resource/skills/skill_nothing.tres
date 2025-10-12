@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bwcg2vyfmyxn1"]
+
+[ext_resource type="Script" uid="uid://bbdakcxjhi7q3" path="res://src/resource_definitions/skill/skill.gd" id="1_bn5kn"]
+
+[resource]
+resource_name = "SkillNothing"
+script = ExtResource("1_bn5kn")
+skill_name = "Nothing"
+target_scope = 0
+target_enemies = false
+metadata/_custom_type_script = "uid://bbdakcxjhi7q3"
